@@ -74,3 +74,14 @@ function noTiedGame() {
   }
   return gameWinner;
 } /*No tied game f(x) Finish here*/ /*No tied game f(x) Finish here*/
+
+/*This is the game main F(x) Start here*/ /*This is the game main F(x) Start here*/
+function game() {
+  getComputerChoice();
+  playerSelectionCheck();
+  gameTied();
+  alert(gameWinner);
+  gameLoop(); /*We add all functions, and a new last loop f(x)*/
+} /*This is the game main F(x) Finish Here*/ /*This is the game main F(x) Finish here*/
+
+game();
