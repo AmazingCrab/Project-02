@@ -1,7 +1,7 @@
 /*Variables declaration*/
-let computerSelection = "";
-let playerSelection = "";
-let gameWinner = "";
+let computerSelection = ""; /*This var store the computer selection*/
+let playerSelection = ""; /*This var store the player selection input*/
+let gameWinner = ""; /*This var display the match result text*/
 /*Variables declaration*/
 
 /*Computer Choice f(x) Start here*/ /*Computer Choice f(x) Start here*/
@@ -46,11 +46,38 @@ function gameTied() {
   if (playerSelection === computerSelection) {
     gameWinner = "Tied game, try again!";
   } else {
-    gameNoTied();
+    noTiedGame();
   }
   return gameWinner;
 }
 /*Tied Game check f(x) Finish here*/ /*Tied Game f(x) Finish here*/
+
+/*No tied game f(x) Start here*/ /*No tied game f(x) Start here*/
+function noTiedGame() {
+  gameWinner = "You win the match! You are amazing!";
+  switch (playerSelection) {
+    case "ROCK": {
+      if (computerSelection === "PAPER") {
+        gameWinner = "You lose!, PAPER beats ROCK";
+      }
+      break;
+    }
+    case "PAPER": {
+      if (computerSelection === "SCISSOR") {
+        gameWinner = "You lose!, SCISSOR beats PAPER";
+      }
+      break;
+    }
+    case "SCISSOR": {
+      if (computerSelection === "ROCK") {
+        gameWinner = "You lose!, ROCK beats SCISSOR";
+      }
+      break;
+    }
+  }
+  return gameWinner;
+}
+/*No tied game f(x) Finish here*/ /*No tied game f(x) Finish here*/
 
 getComputerChoice();
 playerSelectionCheck();
