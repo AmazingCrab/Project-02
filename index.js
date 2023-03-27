@@ -2,7 +2,8 @@
 let computerSelection = ""; /*This var store the computer selection*/
 let playerSelection = ""; /*This var store the player selection input*/
 let gameWinner = ""; /*This var display the match result text*/
-let i = 0; /*This variable initialize a counter*/
+let i = 0; /*This variable initialize the loop counter*/
+let winnedMatches = "5"; /*This count winnedMatches matches trough loses */
 /*Variables declaration*/
 
 /*Computer Choice f(x) & Start here*/ /*Computer Choice f(x) & Start here*/
@@ -44,6 +45,7 @@ function playerSelectionCheck() {
 function gameTied() {
   if (playerSelection === computerSelection) {
     gameWinner = "Tied game, try again!";
+    winnedMatches -=1;
   } else {
     noTiedGame();
   }
@@ -57,18 +59,21 @@ function noTiedGame() {
     case "ROCK": {
       if (computerSelection === "PAPER") {
         gameWinner = "You lose!, PAPER beats ROCK";
+        winnedMatches -=1;
       }
       break;
     }
     case "PAPER": {
       if (computerSelection === "SCISSOR") {
         gameWinner = "You lose!, SCISSOR beats PAPER";
+        winnedMatches -=1;
       }
       break;
     }
     case "SCISSOR": {
       if (computerSelection === "ROCK") {
         gameWinner = "You lose!, ROCK beats SCISSOR";
+        winnedMatches -=1;
       }
       break;
     }
@@ -82,7 +87,7 @@ function game() {
   playerSelectionCheck();
   gameTied();
   alert(gameWinner);
-  gameLoop(); /*We add all functions, and a new last loop f(x)*/
+  gameLoop(); /*5 times loop f(x) added on main */
 } /*This is the game main F(x) & Finish Here*/ /*This is the game main F(x) & Finish here*/
 
 /*This is the game loop f(x) & Start Here*/  /*This is the game loop f(x) & Start Here*/
@@ -90,6 +95,8 @@ function gameLoop() {
     if (i < 5){
         i+=1;
         game();
+    }   else    {
+        alert("Thanks for playing the game! You win " + winnedMatches + "matches!");
     }   
 }
 /*This is the game loop f(x) & Finish Here*/ /*This is the game loop f(x) & Finish Here*/
