@@ -17,3 +17,13 @@ function getComputerChoice();   {
     return  computerSelection;
 }
 /*Computer Choice f(x) Finish here*/      /*Computer Choice f(x) Finish here*/      
+
+/*Player Selection f(x) Spell Check Start here*/        /*Player Selection f(x) Spell Check Start here*/
+function    playerSelectionCheck()   {
+    playerSelection = prompt("Choose and start playing the game!", "ROCK, PAPER or SCISSOR");
+    playerSelection = playerSelection.toUpperCase();    /*This ignore case sensitive later*/
+    if (!(playerSelection === "ROCK")||(playerSelection === "PAPER")||(playerSelection === "SCISSOR")){
+        playerSelectionCheck();
+    }
+}
+/*Player Selection f(x) Spell Check Finish here*/       /*Player Selection f(x) Spell Check Finish here*/
