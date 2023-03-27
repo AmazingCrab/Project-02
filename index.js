@@ -1,7 +1,7 @@
 /*Variables declaration*/
 let computerSelection = "";
 let playerSelection = "";
-
+let gameWinner="";
 /*Variables declaration*/
 
 /*Computer Choice f(x) Start here*/ /*Computer Choice f(x) Start here*/
@@ -39,5 +39,17 @@ function playerSelectionCheck() {
 }
 /*Player Selection f(x) Finish here*/ /*Player Selection f(x) Finish here*/
 
+/*Tied Game check f(x) Start here*/       /*Tied Game f(x) Start here*/
+function gameTied() {
+    if  (playerSelection === computerSelection) {
+        gameWinner = "Tied game, try again!"
+    }   else    {
+        gameNoTied();
+    }
+    return  gameWinner;
+}
+/*Tied Game check f(x) Finish here*/      /*Tied Game f(x) Finish here*/
+
 getComputerChoice();
 playerSelectionCheck();
+gameTied();
