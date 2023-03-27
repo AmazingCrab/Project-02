@@ -6,16 +6,15 @@ let i = 0; /*This variable initialize the loop counter*/
 let winnedMatches = "5"; /*This count winnedMatches matches trough loses */
 /*Variables declaration*/
 
+/*Variables init f(x) for Game Replay*/ /*Variables init f(x) for Game Replay*/
 function varInit() {
-  /*Variables init*/
-  computerSelection = ""; /*This var store the computer selection*/
-  playerSelection = ""; /*This var store the player selection input*/
-  gameWinner = ""; /*This var display the match result text*/
-  i = 0; /*This variable initialize the loop counter*/
-  winnedMatches = "5"; /*This count winnedMatches matches trough loses */
-  /*Variables init*/
+  computerSelection = "";
+  playerSelection = "";
+  gameWinner = "";
+  i = 0;
+  winnedMatches = "5";
   return { computerSelection, playerSelection, gameWinner, i, winnedMatches };
-}
+} /*Variables init f(x) for Game Replay*/ /*Variables init f(x) for Game Replay*/
 
 /*Computer Choice f(x) & Start here*/ /*Computer Choice f(x) & Start here*/
 function getComputerChoice() {
@@ -113,11 +112,10 @@ function gameLoop() {
     let playAgain = prompt("Do you wanna play again?", "Type YES or NO");
     playAgain = playAgain.toUpperCase();
     if (playAgain === "YES") {
-      varInit();
+      varInit(); /*This f(x) start again all var values*/
       gameLoop();
     } else {
       alert("Thanks for playing the game!");
     }
   }
-} /*This is the game loop f(x) & Finish Here*/
-/*This is the game loop f(x) & Finish Here*/
+} /*This is the game loop f(x) & Finish Here*/ /*This is the game loop f(x) & Finish Here*/
