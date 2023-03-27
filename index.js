@@ -1,26 +1,24 @@
-/*Variables declaration*/
-let computerSelection = ""; /*This var store the computer selection*/
-let playerSelection = ""; /*This var store the player selection input*/
-let gameWinner = ""; /*This var display the match result text*/
-let i = 0; /*This variable initialize the loop counter*/
-let winnedMatches = "5"; /*This count winnedMatches matches trough loses */
-/*Variables declaration*/
+let computerSelection = ""; /*Store the computer selection*/
+let playerSelection = ""; /*Store player selection input*/
+let gameWinner = ""; /*Display the Output text at the end of each round*/
+let i = 0; /*This is the loop counter var.*/
+let winnedMatches = "5"; /*This count trough loses winned matches*/
 
-/*Variables init f(x) for Game Replay*/ /*Variables init f(x) for Game Replay*/
 function varInit() {
+  /*Variables init f(x) for Game Replays & Start Here*/
   computerSelection = "";
   playerSelection = "";
   gameWinner = "";
   i = 0;
   winnedMatches = "5";
   return { computerSelection, playerSelection, gameWinner, i, winnedMatches };
-} /*Variables init f(x) for Game Replay*/ /*Variables init f(x) for Game Replay*/
+}
 
-/*Computer Choice f(x) & Start here*/ /*Computer Choice f(x) & Start here*/
 function getComputerChoice() {
+  /*Computer Choice f(x) & Start here*/
   let randomNumber = Math.round(
     Math.random() * 10
-  ); /*This make a randomNumber from 1 to 10*/
+  ); /*This makes a randomNumber from 1 to 10*/
   computerSelection = "SCISSOR";
   if (randomNumber <= 3) {
     computerSelection = "ROCK";
@@ -28,16 +26,16 @@ function getComputerChoice() {
     computerSelection = "PAPER";
   }
   return computerSelection;
-} /*Computer Choice f(x) & Finish here*/ /*Computer Choice f(x) & Finish here*/
+}
 
-/*Player Selection f(x) & Start here*/ /*Player Selection f(x) & Start here*/
 function playerSelectionCheck() {
+  /*Player Selection f(x) & Start here*/
   playerSelection = prompt(
     "Choose and start playing the game!",
     "ROCK, PAPER or SCISSOR"
   );
   playerSelection =
-    playerSelection.toUpperCase(); /*This ignore case sensitive later*/
+    playerSelection.toUpperCase(); /*This helps ignoring case sensitive*/
   if (
     !(
       playerSelection === "ROCK" ||
@@ -49,10 +47,10 @@ function playerSelectionCheck() {
   } else {
     return playerSelection;
   }
-} /*Player Selection f(x) & Finish here*/ /*Player Selection f(x) & Finish here*/
+}
 
-/*Tied Game check f(x) & Start here*/ /*Tied Game f(x) & Start here*/
 function gameTied() {
+  /*Tied Game check f(x) & Start here*/
   if (playerSelection === computerSelection) {
     gameWinner = "Tied game, try again!";
     winnedMatches -= 1;
@@ -60,10 +58,10 @@ function gameTied() {
     noTiedGame();
   }
   return gameWinner;
-} /*Tied Game check f(x) & Finish here*/ /*Tied Game f(x) & Finish here*/
+}
 
-/*No tied game f(x) & Start here*/ /*No tied game f(x) & Start here*/
 function noTiedGame() {
+  /*No tied game f(x) & Start here*/
   gameWinner = "You win the match! You are amazing!";
   switch (playerSelection) {
     case "ROCK": {
@@ -89,20 +87,18 @@ function noTiedGame() {
     }
   }
   return gameWinner;
-} /*No tied game f(x) & Finish here*/ /*No tied game f(x) & Finish here*/
+}
 
-/*This is the game main F(x) & Start here*/ /*This is the game main F(x) & Start here*/
 function game() {
+  /*This is the game main F(x) & Start here*/
   getComputerChoice();
   playerSelectionCheck();
-  gameTied();
+  gameTied(); /*This f(x) call gameNoTied() and that combo give the first Result before the loop*/
   alert(gameWinner);
-  gameLoop(); /*5 times loop f(x) added on main */
-} /*This is the game main F(x) & Finish Here*/ /*This is the game main F(x) & Finish here*/
+  gameLoop(); /*5 times loop f(x) added*/
+}
 
-/*This is the game loop f(x) & Start Here*/ /*This is the game loop f(x) & Start Here*/
-
-gameLoop();
+gameLoop(); /*This is the game loop f(x) & Start Here*/
 function gameLoop() {
   if (i < 5) {
     i += 1;
@@ -112,10 +108,10 @@ function gameLoop() {
     let playAgain = prompt("Do you wanna play again?", "Type YES or NO");
     playAgain = playAgain.toUpperCase();
     if (playAgain === "YES") {
-      varInit(); /*This f(x) start again all var values*/
+      varInit(); /*This f(x) start again all var. values*/
       gameLoop();
     } else {
       alert("Thanks for playing the game!");
     }
   }
-} /*This is the game loop f(x) & Finish Here*/ /*This is the game loop f(x) & Finish Here*/
+}
