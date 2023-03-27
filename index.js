@@ -16,8 +16,7 @@ function getComputerChoice() {
     computerSelection = "PAPER";
   }
   return computerSelection;
-}
-/*Computer Choice f(x) Finish here*/ /*Computer Choice f(x) Finish here*/
+} /*Computer Choice f(x) Finish here*/ /*Computer Choice f(x) Finish here*/
 
 /*Player Selection f(x) Start here*/ /*Player Selection f(x) Start here*/
 function playerSelectionCheck() {
@@ -38,8 +37,7 @@ function playerSelectionCheck() {
   } else {
     return playerSelection;
   }
-}
-/*Player Selection f(x) Finish here*/ /*Player Selection f(x) Finish here*/
+} /*Player Selection f(x) Finish here*/ /*Player Selection f(x) Finish here*/
 
 /*Tied Game check f(x) Start here*/ /*Tied Game f(x) Start here*/
 function gameTied() {
@@ -49,8 +47,7 @@ function gameTied() {
     noTiedGame();
   }
   return gameWinner;
-}
-/*Tied Game check f(x) Finish here*/ /*Tied Game f(x) Finish here*/
+} /*Tied Game check f(x) Finish here*/ /*Tied Game f(x) Finish here*/
 
 /*No tied game f(x) Start here*/ /*No tied game f(x) Start here*/
 function noTiedGame() {
@@ -76,9 +73,4 @@ function noTiedGame() {
     }
   }
   return gameWinner;
-}
-/*No tied game f(x) Finish here*/ /*No tied game f(x) Finish here*/
-
-getComputerChoice();
-playerSelectionCheck();
-gameTied();
+} /*No tied game f(x) Finish here*/ /*No tied game f(x) Finish here*/
