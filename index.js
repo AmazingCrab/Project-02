@@ -6,6 +6,17 @@ let i = 0; /*This variable initialize the loop counter*/
 let winnedMatches = "5"; /*This count winnedMatches matches trough loses */
 /*Variables declaration*/
 
+function varInit() {
+  /*Variables init*/
+  computerSelection = ""; /*This var store the computer selection*/
+  playerSelection = ""; /*This var store the player selection input*/
+  gameWinner = ""; /*This var display the match result text*/
+  i = 0; /*This variable initialize the loop counter*/
+  winnedMatches = "5"; /*This count winnedMatches matches trough loses */
+  /*Variables init*/
+  return { computerSelection, playerSelection, gameWinner, i, winnedMatches };
+}
+
 /*Computer Choice f(x) & Start here*/ /*Computer Choice f(x) & Start here*/
 function getComputerChoice() {
   let randomNumber = Math.round(
@@ -45,7 +56,7 @@ function playerSelectionCheck() {
 function gameTied() {
   if (playerSelection === computerSelection) {
     gameWinner = "Tied game, try again!";
-    winnedMatches -=1;
+    winnedMatches -= 1;
   } else {
     noTiedGame();
   }
@@ -59,21 +70,21 @@ function noTiedGame() {
     case "ROCK": {
       if (computerSelection === "PAPER") {
         gameWinner = "You lose!, PAPER beats ROCK";
-        winnedMatches -=1;
+        winnedMatches -= 1;
       }
       break;
     }
     case "PAPER": {
       if (computerSelection === "SCISSOR") {
         gameWinner = "You lose!, SCISSOR beats PAPER";
-        winnedMatches -=1;
+        winnedMatches -= 1;
       }
       break;
     }
     case "SCISSOR": {
       if (computerSelection === "ROCK") {
         gameWinner = "You lose!, ROCK beats SCISSOR";
-        winnedMatches -=1;
+        winnedMatches -= 1;
       }
       break;
     }
@@ -90,15 +101,23 @@ function game() {
   gameLoop(); /*5 times loop f(x) added on main */
 } /*This is the game main F(x) & Finish Here*/ /*This is the game main F(x) & Finish here*/
 
-/*This is the game loop f(x) & Start Here*/  /*This is the game loop f(x) & Start Here*/
-function gameLoop() {
-    if (i < 5){
-        i+=1;
-        game();
-    }   else    {
-        alert("Thanks for playing the game! You win " + winnedMatches + "matches!");
-    }   
-}
-/*This is the game loop f(x) & Finish Here*/ /*This is the game loop f(x) & Finish Here*/
+/*This is the game loop f(x) & Start Here*/ /*This is the game loop f(x) & Start Here*/
 
 gameLoop();
+function gameLoop() {
+  if (i < 5) {
+    i += 1;
+    game();
+  } else {
+    alert("You win " + winnedMatches + "matches!");
+    let playAgain = prompt("Do you wanna play again?", "Type YES or NO");
+    playAgain = playAgain.toUpperCase();
+    if (playAgain === "YES") {
+      varInit();
+      gameLoop();
+    } else {
+      alert("Thanks for playing the game!");
+    }
+  }
+} /*This is the game loop f(x) & Finish Here*/
+/*This is the game loop f(x) & Finish Here*/
