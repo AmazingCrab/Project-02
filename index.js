@@ -18,6 +18,7 @@ function varInit() {
     computerSelection,
     playerSelection,
     gameWinner,
+    gameCounter,
     winnedMatches,
     playAgain,
   };
