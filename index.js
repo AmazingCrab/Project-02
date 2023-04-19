@@ -111,8 +111,8 @@ function game() {
   gameTied(); /*This f(x) call gameNoTied() and that combo give the first Result before the loop*/
 }
 
-gameLoop(); /*This is the game loop f(x) & Start Here*/
 function gameLoop() {
+  /*This is the game loop f(x) & Start Here*/
   for (; gameCounter < 5; ) {
     gameCounter += 1;
     game();
@@ -130,3 +130,4 @@ function gameLoop() {
     alert("Thanks for playing the game!");
   }
 }
+gameLoop();
