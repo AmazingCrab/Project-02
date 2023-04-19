@@ -1,4 +1,5 @@
 let computerSelection = ""; /*Store the computer selection*/
+let randomNumber =""; /*random number for computerSelection calcs*/
 let playerSelection = ""; /*Store player selection input*/
 let gameWinner = ""; /*Display the Output text at the end of each round*/
 let i = 0; /*This is the loop counter var.*/
@@ -14,11 +15,18 @@ function varInit() {
   return { computerSelection, playerSelection, gameWinner, i, winnedMatches };
 }
 
+function number(){
+  randomNumber = Math.round(
+    Math.random() * 10
+  )
+}
+
 function getComputerChoice() {
   /*Computer Choice f(x) & Start here*/
-  let randomNumber = Math.round(
-    Math.random() * 10
-  ); /*This makes a randomNumber from 1 to 10*/
+  number();
+  while (randomNumber == 0 || randomNumber == 10){
+    number();
+  }/*This makes a randomNumber from 1 to 9 and we give equal chances to every possibility*/
   computerSelection = "SCISSOR";
   if (randomNumber <= 3) {
     computerSelection = "ROCK";
