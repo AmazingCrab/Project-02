@@ -13,8 +13,14 @@ function varInit() {
   gameWinner = "";
   gameCounter = 0;
   winnedMatches = "5";
-  playAgain ="";
-  return { computerSelection, playerSelection, gameWinner, winnedMatches, playAgain };
+  playAgain = "";
+  return {
+    computerSelection,
+    playerSelection,
+    gameWinner,
+    winnedMatches,
+    playAgain,
+  };
 }
 
 function number() {
@@ -66,7 +72,7 @@ function gameTied() {
   } else {
     noTiedGame();
   }
-  return {gameWinner, winnedMatches};
+  return { gameWinner, winnedMatches };
 }
 
 function noTiedGame() {
@@ -95,7 +101,7 @@ function noTiedGame() {
       break;
     }
   }
-  return {gameWinner, winnedMatches};
+  return { gameWinner, winnedMatches };
 }
 
 function game() {
@@ -107,7 +113,7 @@ function game() {
 
 gameLoop(); /*This is the game loop f(x) & Start Here*/
 function gameLoop() {
-  for (; gameCounter < 5;) {
+  for (; gameCounter < 5; ) {
     gameCounter += 1;
     game();
   }
