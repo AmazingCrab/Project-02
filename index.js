@@ -114,7 +114,7 @@ function gameLoop() {
     game();
   } else {
     alert("You win " + winnedMatches + "matches!");
-    let playAgain = prompt("Do you wanna play again?", "Type YES or NO");
+    let playAgain = prompt("Do you wanna play again?", "Type YES or ANY key to exit.");
     playAgain = playAgain.toUpperCase();
     if (playAgain === "YES") {
       varInit(); /*This f(x) start again all var. values*/
