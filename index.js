@@ -27,11 +27,12 @@ function getComputerChoice() {
   while (randomNumber == 0 || randomNumber == 10){
     number();
   }/*This makes a randomNumber from 1 to 9 and we give equal chances to every possibility*/
-  computerSelection = "SCISSOR";
   if (randomNumber <= 3) {
     computerSelection = "ROCK";
   } else if (randomNumber <= 6) {
     computerSelection = "PAPER";
+  }else {
+    computerSelection = "SCISSOR";
   }
   return computerSelection;
 }
