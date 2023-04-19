@@ -1,37 +1,37 @@
 let computerSelection = ""; /*Store the computer selection*/
-let randomNumber =""; /*random number for computerSelection calcs*/
+let randomNumber = ""; /*random number for computerSelection calcs*/
 let playerSelection = ""; /*Store player selection input*/
 let gameWinner = ""; /*Display the Output text at the end of each round*/
-let i = 0; /*This is the loop counter var.*/
+let gameCounter = 0; /*This is the loop counter*/
 let winnedMatches = "5"; /*This count trough loses winned matches*/
+let playAgain = ""; /*PlayAgain option*/
 
 function varInit() {
   /*Variables init f(x) for Game Replays & Start Here*/
   computerSelection = "";
   playerSelection = "";
   gameWinner = "";
-  i = 0;
+  gameCounter = 0;
   winnedMatches = "5";
-  return { computerSelection, playerSelection, gameWinner, i, winnedMatches };
+  playAgain ="";
+  return { computerSelection, playerSelection, gameWinner, winnedMatches, playAgain };
 }
 
-function number(){
-  randomNumber = Math.round(
-    Math.random() * 10
-  )
+function number() {
+  randomNumber = Math.round(Math.random() * 10);
 }
 
 function getComputerChoice() {
   /*Computer Choice f(x) & Start here*/
   number();
-  while (randomNumber == 0 || randomNumber == 10){
+  while (randomNumber == 0 || randomNumber == 10) {
     number();
-  }/*This makes a randomNumber from 1 to 9 and we give equal chances to every possibility*/
+  } /*This makes a randomNumber from 1 to 9 and we give equal chances to every possibility*/
   if (randomNumber <= 3) {
     computerSelection = "ROCK";
   } else if (randomNumber <= 6) {
     computerSelection = "PAPER";
-  }else {
+  } else {
     computerSelection = "SCISSOR";
   }
   return computerSelection;
@@ -66,7 +66,7 @@ function gameTied() {
   } else {
     noTiedGame();
   }
-  return gameWinner;
+  return {gameWinner, winnedMatches};
 }
 
 function noTiedGame() {
@@ -95,7 +95,7 @@ function noTiedGame() {
       break;
     }
   }
-  return gameWinner;
+  return {gameWinner, winnedMatches};
 }
 
 function game() {
@@ -103,24 +103,24 @@ function game() {
   getComputerChoice();
   playerSelectionCheck();
   gameTied(); /*This f(x) call gameNoTied() and that combo give the first Result before the loop*/
-  alert(gameWinner);
-  gameLoop(); /*5 times loop f(x) added*/
 }
 
 gameLoop(); /*This is the game loop f(x) & Start Here*/
 function gameLoop() {
-  if (i < 5) {
-    i += 1;
+  for (; gameCounter < 5;) {
+    gameCounter += 1;
     game();
+  }
+  alert("You win " + winnedMatches + "matches!");
+  playAgain = prompt(
+    "Do you wanna play again?",
+    "Type YES or ANY key to exit."
+  );
+  playAgain = playAgain.toUpperCase();
+  if (playAgain == "YES") {
+    varInit(); /*This f(x) start again all var. values*/
+    gameLoop();
   } else {
-    alert("You win " + winnedMatches + "matches!");
-    let playAgain = prompt("Do you wanna play again?", "Type YES or ANY key to exit.");
-    playAgain = playAgain.toUpperCase();
-    if (playAgain === "YES") {
-      varInit(); /*This f(x) start again all var. values*/
-      gameLoop();
-    } else {
-      alert("Thanks for playing the game!");
-    }
+    alert("Thanks for playing the game!");
   }
 }
