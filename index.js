@@ -1,10 +1,10 @@
-let computerSelection = ""; /*Store the computer selection*/
-let randomNumber = ""; /*random number for computerSelection calcs*/
-let playerSelection = ""; /*Store player selection input*/
-let gameWinner = ""; /*Display the Output text at the end of each round*/
-let gameCounter = 0; /*This is the loop counter*/
-let winnedMatches = "5"; /*This count trough loses winned matches*/
-let playAgain = ""; /*PlayAgain option*/
+let computerSelection = "" /*Store the computer selection*/
+  , randomNumber = "" /*random number for computerSelection calcs*/
+  , playerSelection = "" /*Store player selection input*/
+  , gameWinner = "" /*Display the Output text at the end of each round*/
+  , gameCounter = 0 /*This is the loop counter*/
+  , winnedMatches = "5" /*This count trough loses winned matches*/
+  , playAgain = ""; /*PlayAgain option*/
 
 function varInit() {
   /*Variables init f(x) for Game Replays & Start Here*/
