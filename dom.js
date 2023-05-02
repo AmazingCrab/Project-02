@@ -4,23 +4,23 @@ const sectionBackImage = document.querySelector("#sectionBackImage");
 
 const spanish = document.querySelector("#flagSpanish");
 const english = document.querySelector("#flagEnglish");
-const h3 = document.querySelector("h3");
+const h3SelectLenguage = document.querySelector("#h3SelectLenguage");
 const h2 = document.querySelector("h2");
 
 const dictionarySpanish = [
-    "Elije tu idioma",    //h3 
+    "Elije tu idioma",    //h3SelectLenguage 
     "Vamos a jugar Piedra Papel o Tijera!",   // h2
   ]; // Spa. dictionary words
   
 const dictionaryEnglish = [
-    "Choose your language",   //h3 
+    "Choose your language",   //h3SelectLenguage 
     "Lets Play Rock, Paper,Scissor!", // h2
   ]; // Eng. dictionary words
 
 let dictionary = dictionaryEnglish; // Selected default dictionary
 
 // Vars. initialized 
-h3.textContent = dictionary[0];
+h3SelectLenguage.textContent = dictionary[0];
 h2.textContent = dictionary[1];
 sectionLanguage.classList.add('clicked');
 
@@ -31,12 +31,12 @@ function translateSpanish(e) {
     h2.classList.remove('select');  // remove if present
     sectionMain.classList.remove('clicked'); // remove if present
     spanish.classList.add("click");
-    h3.classList.add("select");
-    h3.textContent = dictionary[0]; // later we make this a f() with all the words
+    h3SelectLenguage.classList.add("select");
+    h3SelectLenguage.textContent = dictionary[0]; // later we make this a f() with all the words
     h2.textContent = dictionary[1];
     setTimeout(function () {
       spanish.classList.remove("click");
-      h3.classList.remove("select");
+      h3SelectLenguage.classList.remove("select");
       sectionLanguage.classList.remove('clicked');
       sectionMain.classList.add('clicked');   // next step
       h2.classList.add('select'); // next step
@@ -51,12 +51,12 @@ function translateSpanish(e) {
     h2.classList.remove('select');  // remove if present
     sectionMain.classList.remove('clicked'); // remove if present
     english.classList.add("click");
-    h3.classList.add("select");
-    h3.textContent = dictionary[0];
+    h3SelectLenguage.classList.add("select");
+    h3SelectLenguage.textContent = dictionary[0];
     h2.textContent = dictionary[1];
     setTimeout(function () {
       english.classList.remove("click");
-      h3.classList.remove("select");
+      h3SelectLenguage.classList.remove("select");
       sectionLanguage.classList.remove('clicked');
       sectionMain.classList.add('clicked'); // next step
       h2.classList.add('select'); // next step
