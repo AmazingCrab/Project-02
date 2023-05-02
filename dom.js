@@ -12,7 +12,15 @@ const dictionarySpanish = [
     "Vamos a jugar Piedra Papel o Tijera!",   // h2
   ]; // Spa. dictionary words
   
-  const dictionaryEnglish = [
+const dictionaryEnglish = [
     "Choose your language",   //h3 
     "Lets Play Rock, Paper,Scissor!", // h2
   ]; // Eng. dictionary words
+
+let dictionary = dictionaryEnglish; // Selected default dictionary
+
+// Vars. initialized 
+h3.textContent = dictionary[0];
+h2.textContent = dictionary[1];
+sectionLanguage.classList.add('clicked');
+
