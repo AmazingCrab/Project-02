@@ -33,7 +33,7 @@ body{
 
 h3,h2, h1{
     color: white;
-    font-size: 8px;
+    font-size: 12px;
     text-align: center;
     font-weight: 400;
 }
@@ -41,4 +41,16 @@ h3,h2, h1{
     height:24px;
     border: 1px solid black;
     border-radius: 1px;
+}
+.select{
+    color:  #ffc600;
+}
+.click{
+    transform: scale(1.06);
+    border-color: #ffc600;
+
+}
+.clicked{
+    border-color: #ffc600;
+    box-shadow: 0 0 3px #ffc600;
 }

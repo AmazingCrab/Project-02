@@ -24,3 +24,45 @@ h3.textContent = dictionary[0];
 h2.textContent = dictionary[1];
 sectionLanguage.classList.add('clicked');
 
+function translateSpanish(e) {
+    sectionLanguage.classList.add('clicked');
+    dictionary = dictionarySpanish;
+    english.classList.remove("clicked", "click"); // remove if present
+    h2.classList.remove('select');  // remove if present
+    sectionMain.classList.remove('clicked'); // remove if present
+    spanish.classList.add("click");
+    h3.classList.add("select");
+    h3.textContent = dictionary[0]; // later we make this a f() with all the words
+    h2.textContent = dictionary[1];
+    setTimeout(function () {
+      spanish.classList.remove("click");
+      h3.classList.remove("select");
+      sectionLanguage.classList.remove('clicked');
+      sectionMain.classList.add('clicked');   // next step
+      h2.classList.add('select'); // next step
+    }, 2000);
+    spanish.classList.add("clicked");
+  }
+  
+  function translateEnglish(e) {
+    sectionLanguage.classList.add('clicked');
+    dictionary = dictionaryEnglish;
+    spanish.classList.remove("clicked", "click"); // remove if present
+    h2.classList.remove('select');  // remove if present
+    sectionMain.classList.remove('clicked'); // remove if present
+    english.classList.add("click");
+    h3.classList.add("select");
+    h3.textContent = dictionary[0];
+    h2.textContent = dictionary[1];
+    setTimeout(function () {
+      english.classList.remove("click");
+      h3.classList.remove("select");
+      sectionLanguage.classList.remove('clicked');
+      sectionMain.classList.add('clicked'); // next step
+      h2.classList.add('select'); // next step
+    }, 2000);
+    english.classList.add("clicked");
+  }
+  
+  spanish.addEventListener("click", translateSpanish, { capture: false });
+  english.addEventListener("click", translateEnglish, { capture: false });
