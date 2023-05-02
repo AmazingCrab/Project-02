@@ -9,7 +9,7 @@ body{
     text-decoration:none;
 }
 #sectionLanguage, #sectionMain, #sectionButtons{
-    height: 94px;
+    height: 149px;
     padding: 0 0 5px 0;
     display: flex;
     flex-direction: column;
@@ -17,8 +17,8 @@ body{
     justify-content: space-evenly;
     background-color: black;
     margin: 1px 3px 0 3px;
+    border: 1px solid beige;
 }
-
 #containerLanguage{
     display: flex;
     flex-direction: row;
@@ -26,10 +26,9 @@ body{
     justify-content: center;
     gap: 18px;
     padding: 7px;
-    border: 1px solid beige;
 }
 
-h3,h2,h1, button,li,ul{
+h3,h2,h1, button{
     color: white;
     font-size: 12px;
     text-align: center;
@@ -38,6 +37,15 @@ h3,h2,h1, button,li,ul{
 ul{
     display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 3px;
+}
+button{
+    text-transform: uppercase;
+    padding: 6px 0;
+    width: 100vh;
+    scale: 0.83;
 }
 
 #flagSpanish, #flagEnglish{
@@ -46,7 +54,6 @@ ul{
     border-radius: 1px;
 }
 button{
-    width: 100vh;
     background-color:black;
     font-size: 24px;
 }
