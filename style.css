@@ -5,8 +5,10 @@ body{
     font-family: sans-serif;
     margin: 0;
     padding: 0;
+    list-style: none;
+    text-decoration:none;
 }
-#sectionLanguage, #sectionMain{
+#sectionLanguage, #sectionMain, #sectionButtons{
     height: 94px;
     padding: 0 0 5px 0;
     display: flex;
@@ -15,10 +17,6 @@ body{
     justify-content: space-evenly;
     background-color: black;
     margin: 1px 3px 0 3px;
-}
-#sectionMain{
-    background-color: black;
-    border: 1 solid white;
 }
 
 #containerLanguage{
@@ -31,16 +29,26 @@ body{
     border: 1px solid beige;
 }
 
-h3,h2, h1{
+h3,h2,h1, button,li,ul{
     color: white;
     font-size: 12px;
     text-align: center;
     font-weight: 400;
 }
+ul{
+    display: flex;
+    flex-direction: column;
+}
+
 #flagSpanish, #flagEnglish{
     height:24px;
     border: 1px solid black;
     border-radius: 1px;
+}
+button{
+    width: 100vh;
+    background-color:black;
+    font-size: 24px;
 }
 .select{
     color:  #ffc600;

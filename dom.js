@@ -1,31 +1,43 @@
 const sectionLanguage = document.querySelector("#sectionLanguage");
 const sectionMain = document.querySelector("#sectionMain");
-const sectionBackImage = document.querySelector("#sectionBackImage");
+const sectionButtons = document.querySelector("#sectionBackImage");
 
 const spanish = document.querySelector("#flagSpanish");
 const english = document.querySelector("#flagEnglish");
 const h3SelectLenguage = document.querySelector("#h3SelectLenguage");
 const h2Title = document.querySelector("#h2Title");
 const h3SubTitle = document.querySelector("#h3SubTitle");
+const rock = document.querySelector("#rock");
+const paper = document.querySelector("#paper");
+const scissor = document.querySelector("#scissor");
 
 const dictionarySpanish = [
     "Elije tu idioma",    //h3SelectLenguage 
-    "Vamos a jugar Piedra Papel o Tijera!",
-    "Selecciona PIDRA, PAPEL ó TIJERA!"   // h2Title
+    "Vamos a jugar Piedra Papel o Tijera!",   //h2Title
+    "Selecciona PIDRA, PAPEL ó TIJERA!",  //h3SubTitle
+    "Piedra", // button 1
+    "Papel",  // button 2
+    "Tijera"  // button 3
   ]; // Spa. dictionary words
   
 const dictionaryEnglish = [
     "Choose your language",   //h3SelectLenguage 
-    "Lets Play Rock, Paper,Scissor!",
-    "Select Between ROCK PAPER SCISSORS!" // h2Title
+    "Lets Play Rock, Paper,Scissor!", //h2Title
+    "Select Between ROCK PAPER SCISSORS!", //h3SubTitle
+    "Rock",   // button 1
+    "Paper",  // button 2
+    "Scissor" // button 3
   ]; // Eng. dictionary words
 
 let dictionary = dictionaryEnglish; // Selected default dictionary
 
 // Vars. initialized 
 h3SelectLenguage.textContent = dictionary[0];
-h3SubTitle.textContent = dictionary[2];
 h2Title.textContent = dictionary[1];
+h3SubTitle.textContent = dictionary[2];
+rock.textContent = dictionary[3];
+paper.textContent = dictionary[4];
+scissor.textContent = dictionary[5];
 sectionLanguage.classList.add('clicked');
 
 function translateSpanish(e) {
@@ -39,6 +51,9 @@ function translateSpanish(e) {
     h3SelectLenguage.textContent = dictionary[0]; // later we make this a f() with all the words
     h2Title.textContent = dictionary[1];
     h3SubTitle.textContent = dictionary [2];
+    rock.textContent = dictionary [3];
+    paper.textContent = dictionary [4];
+    scissor.textContent = dictionary [5];
     setTimeout(function () {
       spanish.classList.remove("click");
       h3SelectLenguage.classList.remove("select");
@@ -60,6 +75,9 @@ function translateSpanish(e) {
     h3SelectLenguage.textContent = dictionary[0];
     h2Title.textContent = dictionary[1];
     h3SubTitle.textContent = dictionary[2]
+    rock.textContent = dictionary [3];
+    paper.textContent = dictionary [4];
+    scissor.textContent = dictionary [5];
     setTimeout(function () {
       english.classList.remove("click");
       h3SelectLenguage.classList.remove("select");
