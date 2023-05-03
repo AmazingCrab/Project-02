@@ -104,67 +104,80 @@ spanish.addEventListener("click", translateSpanish, { capture: false }); // choo
 english.addEventListener("click", translateEnglish, { capture: false }); // // choose lenguage english f()
 
 function rockSelection(e) {
+  if (gameCounter<5){
+  gameCounter+=1;
+  playerSelection = "ROCK";
+  getComputerChoice();
+  gameTied();
   sectionLanguage.classList.remove("clicked"); // remove if present
-  sectionMain.classList.remove("clicked"); // remove if present
-  spanish.classList.remove("click"); // remove if present
-  english.classList.remove("click"); // remove if present
+  sectionMain.classList.remove("clicked");     // remove if present
+  spanish.classList.remove("click");           // remove if present
+  english.classList.remove("click");           // remove if present
   h3SelectLenguage.classList.remove("select"); // remove if present
-  paper.classList.remove("clicked", "click");
-  scissor.classList.remove("clicked", "click");
+  paper.classList.remove("clicked", "click");  // remove if present
+  scissor.classList.remove("clicked", "click");// remove if present
   h2Title.classList.remove("select"); //// just remove
   rock.classList.add("clicked", "click");
-  playerSelection = "ROCK";
   setTimeout(function () {
     rock.classList.remove("click");
   }, 2000);
-  gameTied();
-  console.log(gameWinner);
-  console.log(winnedMatches);
   h3SubTitle.textContent = gameWinner;
   h3SubTitle.classList.add("select");
-  return winnedMatches;
+  return {gameCounter, winnedMatches};
+  }
+  matchesCounter()
 }
 
 function paperSelection(e) {
+  if (gameCounter<5){
+  gameCounter+=1;
+  playerSelection = "PAPER";
+  getComputerChoice();
+  gameTied();
   sectionLanguage.classList.remove("clicked"); // remove if present
-  sectionMain.classList.remove("clicked"); // remove if present
-  spanish.classList.remove("click"); // remove if present
-  english.classList.remove("click"); // remove if present
+  sectionMain.classList.remove("clicked");     // remove if present
+  spanish.classList.remove("click");           // remove if present
+  english.classList.remove("click");           // remove if present
   h3SelectLenguage.classList.remove("select"); // remove if present
-  scissor.classList.remove("clicked", "click");
-  rock.classList.remove("clicked", "click");
+  scissor.classList.remove("clicked", "click");// remove if present
+  rock.classList.remove("clicked", "click");   // remove if present
   h2Title.classList.remove("select"); // just remove
   paper.classList.add("clicked", "click");
-  playerSelection = "PAPER";
   setTimeout(function () {
     paper.classList.remove("click");
   }, 2000);
-  gameTied();
-  console.log(gameWinner);
-  console.log(winnedMatches); //this should return later
   h3SubTitle.textContent = gameWinner;
   h3SubTitle.classList.add("select");
-  return winnedMatches;
+  return {gameCounter, winnedMatches};
+  }
+  matchesCounter()
 }
 
 function scissorSelection(e) {
-  sectionLanguage.classList.remove("clicked"); // remove if present
-  sectionMain.classList.remove("clicked"); // remove if present
-  spanish.classList.remove("click"); // remove if present
-  english.classList.remove("click"); // remove if present
-  h3SelectLenguage.classList.remove("select"); // remove if present
-  paper.classList.remove("clicked", "click");
-  rock.classList.remove("clicked", "click");
+  if (gameCounter<5){
+  gameCounter+=1;
+  playerSelection = "SCISSOR";
+  getComputerChoice();
+  gameTied();
+  sectionLanguage.classList.remove("clicked");// remove if present
+  sectionMain.classList.remove("clicked");    // remove if present
+  spanish.classList.remove("click");          // remove if present
+  english.classList.remove("click");          // remove if present
+  h3SelectLenguage.classList.remove("select");// remove if present
+  paper.classList.remove("clicked", "click"); // remove if present
+  rock.classList.remove("clicked", "click");  // remove if present
   h2Title.classList.remove("select"); // just remove
   scissor.classList.add("clicked", "click");
-  playerSelection = "SCISSOR";
   setTimeout(function () {
     scissor.classList.remove("click");
   }, 2000);
-  gameTied();
-  console.log(gameWinner);
-  console.log(winnedMatches); //this should return later
   h3SubTitle.textContent = gameWinner;
   h3SubTitle.classList.add("select");
-  return winnedMatches;
+  return {gameCounter, winnedMatches};
+  }
+  matchesCounter()
 }
+
+rock.addEventListener("click", rockSelection, { capture: false });
+paper.addEventListener("click", paperSelection, { capture: false });
+scissor.addEventListener("click", scissorSelection, { capture: false });

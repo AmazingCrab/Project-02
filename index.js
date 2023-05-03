@@ -6,8 +6,8 @@ let computerSelection = "" /*Store the computer selection*/
   , winnedMatches = "5" /*This count trough loses winned matches*/
   , playAgain = ""; /*PlayAgain option*/
 
-function varInit() {
-  /*Variables init f(x) for Game Replays & Start Here*/
+/*function varInit() {
+  Variables init f(x) for Game Replays & Start Here
   computerSelection = "";
   playerSelection = "";
   gameWinner = "";
@@ -22,7 +22,7 @@ function varInit() {
     winnedMatches,
     playAgain,
   };
-}
+}*/
 
 function number() {
   randomNumber = Math.round(Math.random() * 10);
@@ -106,34 +106,41 @@ function noTiedGame() {
   return { gameWinner, winnedMatches };
 }
 
+function matchesCounter(){
+  if (gameCounter =5){
+    h3SubTitle.textContent= "You win " + winnedMatches + " matches!";
+    gameCounter = 0;
+    winnedMatches = "5";
+  }
+}
+/*
 function game() {
-  rock.addEventListener("click", rockSelection, { capture: false });
-  paper.addEventListener("click", paperSelection, { capture: false });
-  scissor.addEventListener("click", scissorSelection, { capture: false });
   /*This is the game main F(x) & Start here*/
   getComputerChoice();
   //playerSelectionCheck();
-  if (playerSelection != ""){
   gameTied();
-  }; /*This f(x) call gameNoTied() and that combo give the first Result before the loop*/
+  /*This f(x) call gameNoTied() and that combo give the first Result before the loop*//*
 }
 
 function gameLoop() {
-  /*This is the game loop f(x) & Start Here*/
-for (; gameCounter < 5; ) {
+/*This is the game loop f(x) & Start Here*/
+/*for (; gameCounter < 5; ) {
     gameCounter += 1;
     game();
   }
   alert("You win " + winnedMatches + "matches!");
-  playAgain = prompt(
+if (gameCounter<5){
+  h3SubTitle.textContent= "You win " + winnedMatches + "matches!"
+}
+playAgain = prompt(
     "Do you wanna play again?",
     "Type YES or ANY key to exit."
   );
   playAgain = playAgain.toUpperCase();
   if (playAgain == "YES") {
-    varInit(); /*This f(x) start again all var. values*/
+    varInit(); /*This f(x) start again all var. values*//*
   gameLoop();
   } else {
     alert("Thanks for playing the game!");
   }
-}
+}*/
