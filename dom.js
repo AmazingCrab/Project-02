@@ -119,7 +119,7 @@ function rockSelection(e) {
   h2Title.classList.remove("select"); //// just remove
   rock.classList.add("clicked", "click");
   setTimeout(function () {
-    rock.classList.remove("click");
+    rock.classList.remove("click", "clicked");
   }, 2000);
   h3SubTitle.textContent = gameWinner;
   h3SubTitle.classList.add("select");
@@ -144,7 +144,7 @@ function paperSelection(e) {
   h2Title.classList.remove("select"); // just remove
   paper.classList.add("clicked", "click");
   setTimeout(function () {
-    paper.classList.remove("click");
+    paper.classList.remove("click", "clicked");
   }, 2000);
   h3SubTitle.textContent = gameWinner;
   h3SubTitle.classList.add("select");
@@ -169,7 +169,7 @@ function scissorSelection(e) {
   h2Title.classList.remove("select"); // just remove
   scissor.classList.add("clicked", "click");
   setTimeout(function () {
-    scissor.classList.remove("click");
+    scissor.classList.remove("click", "clicked");
   }, 2000);
   h3SubTitle.textContent = gameWinner;
   h3SubTitle.classList.add("select");
