@@ -56,8 +56,8 @@ function translateSpanish(e) {
   sectionLanguage.classList.add("clicked");
   dictionary = dictionarySpanish;
   english.classList.remove("clicked", "click"); // remove if present
-  h2Title.classList.remove("select"); // remove if present
-  sectionMain.classList.remove("clicked"); // remove if present
+  h2Title.classList.remove("select");           // remove if present
+  sectionMain.classList.remove("clicked");      // remove if present
   spanish.classList.add("click");
   h3SelectLenguage.classList.add("select");
   h3SelectLenguage.textContent = dictionary[0]; // later we make this a f() with all the words
@@ -70,8 +70,8 @@ function translateSpanish(e) {
     spanish.classList.remove("click");
     h3SelectLenguage.classList.remove("select");
     sectionLanguage.classList.remove("clicked");
-    sectionMain.classList.add("clicked"); // next step
-    h2Title.classList.add("select"); // next step
+    sectionMain.classList.add("clicked");     // next step
+    h2Title.classList.add("select");          // next step
   }, 2000);
   spanish.classList.add("clicked");
 }
@@ -80,8 +80,8 @@ function translateEnglish(e) {
   sectionLanguage.classList.add("clicked");
   dictionary = dictionaryEnglish;
   spanish.classList.remove("clicked", "click"); // remove if present
-  h2Title.classList.remove("select"); // remove if present
-  sectionMain.classList.remove("clicked"); // remove if present
+  h2Title.classList.remove("select");           // remove if present
+  sectionMain.classList.remove("clicked");      // remove if present
   english.classList.add("click");
   h3SelectLenguage.classList.add("select");
   h3SelectLenguage.textContent = dictionary[0];
@@ -94,8 +94,8 @@ function translateEnglish(e) {
     english.classList.remove("click");
     h3SelectLenguage.classList.remove("select");
     sectionLanguage.classList.remove("clicked");
-    sectionMain.classList.add("clicked"); // next step
-    h2Title.classList.add("select"); // next step
+    sectionMain.classList.add("clicked");       // next step
+    h2Title.classList.add("select");            // next step
   }, 2000);
   english.classList.add("clicked");
 }
@@ -122,6 +122,7 @@ function rockSelection(e) {
   console.log(winnedMatches);
   h3SubTitle.textContent = gameWinner;
   h3SubTitle.classList.add("select");
+  return winnedMatches;
 }
 
 function paperSelection(e) {
@@ -143,6 +144,7 @@ function paperSelection(e) {
   console.log(winnedMatches); //this should return later
   h3SubTitle.textContent = gameWinner;
   h3SubTitle.classList.add("select");
+  return winnedMatches;
 }
 
 function scissorSelection(e) {
@@ -164,10 +166,5 @@ function scissorSelection(e) {
   console.log(winnedMatches); //this should return later
   h3SubTitle.textContent = gameWinner;
   h3SubTitle.classList.add("select");
+  return winnedMatches;
 }
-
-getComputerChoice();
-
-rock.addEventListener("click", rockSelection, { capture: false });
-paper.addEventListener("click", paperSelection, { capture: false });
-scissor.addEventListener("click", scissorSelection, { capture: false });

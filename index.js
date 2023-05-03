@@ -106,16 +106,21 @@ function noTiedGame() {
   return { gameWinner, winnedMatches };
 }
 
-/*function game() {
+function game() {
+  rock.addEventListener("click", rockSelection, { capture: false });
+  paper.addEventListener("click", paperSelection, { capture: false });
+  scissor.addEventListener("click", scissorSelection, { capture: false });
   /*This is the game main F(x) & Start here*/
-/*  getComputerChoice();
+  getComputerChoice();
   //playerSelectionCheck();
-/*  gameTied(); /*This f(x) call gameNoTied() and that combo give the first Result before the loop*/
-/*}
+  if (playerSelection != ""){
+  gameTied();
+  }; /*This f(x) call gameNoTied() and that combo give the first Result before the loop*/
+}
 
-/*function gameLoop() {
+function gameLoop() {
   /*This is the game loop f(x) & Start Here*/
-  /*for (; gameCounter < 5; ) {
+for (; gameCounter < 5; ) {
     gameCounter += 1;
     game();
   }
@@ -127,9 +132,8 @@ function noTiedGame() {
   playAgain = playAgain.toUpperCase();
   if (playAgain == "YES") {
     varInit(); /*This f(x) start again all var. values*/
-  /*  gameLoop();
+  gameLoop();
   } else {
     alert("Thanks for playing the game!");
   }
 }
-gameLoop();*/
