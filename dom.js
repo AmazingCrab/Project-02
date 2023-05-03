@@ -91,16 +91,15 @@ function translateEnglish(e) {
 spanish.addEventListener("click", translateSpanish, { capture: false }); // choose lenguage spanish f()
 english.addEventListener("click", translateEnglish, { capture: false }); // // choose lenguage english f()
 
-function rockSelection (e){
-  console.log(e);
+function rockSelection(e) {
+  sectionLanguage.classList.remove("clicked");
+  sectionMain.classList.remove("clicked");
 }
 
-function paperSelection (e){
-}
+function paperSelection(e) {}
 
-function scissorSelection (e){
-}
+function scissorSelection(e) {}
 
-rock.addEventListener("click", rockSelection, {capture: false });
-paper.addEventListener("click", paper,{capture: false });
-scissor.addEventListener("click", scissor,{capture: false });
+rock.addEventListener("click", rockSelection, { capture: false });
+paper.addEventListener("click", paper, { capture: false });
+scissor.addEventListener("click", scissor, { capture: false });
