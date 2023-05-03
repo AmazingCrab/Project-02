@@ -14,7 +14,7 @@ const scissor = document.querySelector("#scissor");
 const dictionarySpanish = [
   "Elije tu idioma", //h3SelectLenguage
   "Vamos a jugar Piedra Papel o Tijera!", //h2Title
-  "Selecciona PIDRA, PAPEL ó TIJERA!", //h3SubTitle
+  "Selecciona PIEDRA, PAPEL ó TIJERA!", //h3SubTitle
   "Piedra", // button 1
   "Papel", // button 2
   "Tijera", // button 3
@@ -92,14 +92,52 @@ spanish.addEventListener("click", translateSpanish, { capture: false }); // choo
 english.addEventListener("click", translateEnglish, { capture: false }); // // choose lenguage english f()
 
 function rockSelection(e) {
-  sectionLanguage.classList.remove("clicked");
-  sectionMain.classList.remove("clicked");
+  sectionLanguage.classList.remove("clicked");  // remove if present
+  sectionMain.classList.remove("clicked");  // remove if present
+  spanish.classList.remove("click");  // remove if present
+  english.classList.remove("click");  // remove if present
+  h3SelectLenguage.classList.remove("select");  // remove if present
+  h2Title.classList.remove("select"); //// just remove
+  rock.classList.add("clicked","click");
+  playerSelection = "ROCK";
+  setTimeout(function () {
+    rock.classList.remove("click");
+  }, 2000);
+  playerSelection();
 }
 
-function paperSelection(e) {}
+function paperSelection(e) {
+  sectionLanguage.classList.remove("clicked");  // remove if present
+  sectionMain.classList.remove("clicked");  // remove if present
+  spanish.classList.remove("click");  // remove if present
+  english.classList.remove("click");  // remove if present
+  h3SelectLenguage.classList.remove("select");  // remove if present
+  h2Title.classList.remove("select"); // just remove
+  paper.classList.add("clicked","click");
+  playerSelection = "PAPER";
+  setTimeout(function () {
+    paper.classList.remove("click");
+  }, 2000);
+  playerSelection();
+}
 
-function scissorSelection(e) {}
+function scissorSelection(e) {
+  sectionLanguage.classList.remove("clicked");  // remove if present
+  sectionMain.classList.remove("clicked");  // remove if present
+  spanish.classList.remove("click");  // remove if present
+  english.classList.remove("click");  // remove if present
+  h3SelectLenguage.classList.remove("select");  // remove if present
+  h2Title.classList.remove("select"); // just remove
+  scissor.classList.add("clicked","click");
+  playerSelection = "SCISSOR";
+  setTimeout(function () {
+    scissor.classList.remove("click");
+  }, 2000);
+playerSelection();
+}
 
 rock.addEventListener("click", rockSelection, { capture: false });
-paper.addEventListener("click", paper, { capture: false });
-scissor.addEventListener("click", scissor, { capture: false });
+paper.addEventListener("click", paperSelection, { capture: false });
+scissor.addEventListener("click", scissorSelection, { capture: false });
+
+computerSelection();

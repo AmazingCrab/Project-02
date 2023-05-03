@@ -44,15 +44,16 @@ function getComputerChoice() {
   return computerSelection;
 }
 
-function playerSelectionCheck() {
-  /*Player Selection f(x) & Start here*/
-  playerSelection = prompt(
+/*function playerSelectionCheck() {
+
+  Player Selection f(x) & Start here*/
+/*  playerSelection = prompt(
     "Choose and start playing the game!",
     "ROCK, PAPER or SCISSOR"
   );
   playerSelection =
     playerSelection.toUpperCase(); /*This helps ignoring case sensitive*/
-  if (
+/*  if (
     !(
       playerSelection === "ROCK" ||
       playerSelection === "PAPER" ||
@@ -63,7 +64,7 @@ function playerSelectionCheck() {
   } else {
     return playerSelection;
   }
-}
+}*/
 
 function gameTied() {
   /*Tied Game check f(x) & Start here*/
@@ -105,16 +106,16 @@ function noTiedGame() {
   return { gameWinner, winnedMatches };
 }
 
-function game() {
+/*function game() {
   /*This is the game main F(x) & Start here*/
-  getComputerChoice();
-  playerSelectionCheck();
-  gameTied(); /*This f(x) call gameNoTied() and that combo give the first Result before the loop*/
+/*  getComputerChoice();
+  //playerSelectionCheck();
+/*  gameTied(); /*This f(x) call gameNoTied() and that combo give the first Result before the loop*/
 }
 
-function gameLoop() {
+/*function gameLoop() {
   /*This is the game loop f(x) & Start Here*/
-  for (; gameCounter < 5; ) {
+  /*for (; gameCounter < 5; ) {
     gameCounter += 1;
     game();
   }
@@ -126,9 +127,9 @@ function gameLoop() {
   playAgain = playAgain.toUpperCase();
   if (playAgain == "YES") {
     varInit(); /*This f(x) start again all var. values*/
-    gameLoop();
+  /*  gameLoop();
   } else {
     alert("Thanks for playing the game!");
   }
 }
-gameLoop();
+gameLoop();*/
