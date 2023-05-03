@@ -69,7 +69,7 @@ function getComputerChoice() {
 function gameTied() {
   /*Tied Game check f(x) & Start here*/
   if (playerSelection === computerSelection) {
-    gameWinner = "Tied game, try again!";
+    gameWinner = dictionary[6];
     winnedMatches -= 1;
   } else {
     noTiedGame();
@@ -79,25 +79,25 @@ function gameTied() {
 
 function noTiedGame() {
   /*No tied game f(x) & Start here*/
-  gameWinner = "You win the match! You are amazing!";
+  gameWinner = dictionary[7];
   switch (playerSelection) {
     case "ROCK": {
       if (computerSelection === "PAPER") {
-        gameWinner = "You lose!, PAPER beats ROCK";
+        gameWinner = dictionary[8];
         winnedMatches -= 1;
       }
       break;
     }
     case "PAPER": {
       if (computerSelection === "SCISSOR") {
-        gameWinner = "You lose!, SCISSOR beats PAPER";
+        gameWinner = dictionary[9];
         winnedMatches -= 1;
       }
       break;
     }
     case "SCISSOR": {
       if (computerSelection === "ROCK") {
-        gameWinner = "You lose!, ROCK beats SCISSOR";
+        gameWinner = dictionary[10];
         winnedMatches -= 1;
       }
       break;
