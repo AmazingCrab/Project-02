@@ -111,7 +111,7 @@ function noTiedGame() {
 /*  getComputerChoice();
   //playerSelectionCheck();
 /*  gameTied(); /*This f(x) call gameNoTied() and that combo give the first Result before the loop*/
-}
+/*}
 
 /*function gameLoop() {
   /*This is the game loop f(x) & Start Here*/

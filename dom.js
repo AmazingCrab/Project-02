@@ -103,7 +103,9 @@ function rockSelection(e) {
   setTimeout(function () {
     rock.classList.remove("click");
   }, 2000);
-  playerSelection();
+  gameTied();
+  console.log(gameWinner);
+  console.log(winnedMatches);
 }
 
 function paperSelection(e) {
@@ -118,7 +120,9 @@ function paperSelection(e) {
   setTimeout(function () {
     paper.classList.remove("click");
   }, 2000);
-  playerSelection();
+  gameTied();
+  console.log(gameWinner);
+  console.log(winnedMatches);
 }
 
 function scissorSelection(e) {
@@ -133,11 +137,16 @@ function scissorSelection(e) {
   setTimeout(function () {
     scissor.classList.remove("click");
   }, 2000);
-playerSelection();
+gameTied();
+console.log(gameWinner);
+console.log(winnedMatches);
 }
+
+getComputerChoice();
 
 rock.addEventListener("click", rockSelection, { capture: false });
 paper.addEventListener("click", paperSelection, { capture: false });
 scissor.addEventListener("click", scissorSelection, { capture: false });
 
-computerSelection();
+
+
