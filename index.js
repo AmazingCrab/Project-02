@@ -108,7 +108,7 @@ function noTiedGame() {
 
 function matchesCounter(){
   if (gameCounter =5){
-    h3SubTitle.textContent= "You win " + winnedMatches + " matches!";
+    h3SubTitle.textContent= dictionary[11] + winnedMatches + dictionary[12];
     gameCounter = 0;
     winnedMatches = "5";
   }

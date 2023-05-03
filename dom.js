@@ -1,6 +1,6 @@
 const sectionLanguage = document.querySelector("#sectionLanguage");
 const sectionMain = document.querySelector("#sectionMain");
-const sectionButtons = document.querySelector("#sectionBackImage");
+const sectionButtons = document.querySelector("#sectionButtons");
 
 const spanish = document.querySelector("#flagSpanish");
 const english = document.querySelector("#flagEnglish");
@@ -22,7 +22,9 @@ const dictionarySpanish = [
   "¡Increible! ¡Ganaste la partida!",     //    "
   "¡Perdiste!, ¡PAPEL envuelve PIEDRA!",
   "¡Perdiste!, ¡TIJERA corta PAPEL!",     //    "
-  "¡Perdiste!, PIEDRA rompe TIJERA"
+  "¡Perdiste!, PIEDRA rompe TIJERA",
+  "¡Ganaste ",                            // index.js/final msn
+  " partidas en 5 intentos!"              // index.js/final msn
 
 ]; // Spa. dictionary words
 
@@ -37,7 +39,9 @@ const dictionaryEnglish = [
   "You win the match! You are amazing!",  //    "
   "You lose!, PAPER beats ROCK",          //    "
   "You lose!, SCISSOR beats PAPER",       //    "
-  "You lose!, ROCK beats SCISSOR"         //    "
+  "You lose!, ROCK beats SCISSOR",        //    "
+  "You win ",                             // index.js/final msn
+  " matches! in 5 Attempts!"              // index.js/final msn
 ]; // Eng. dictionary words
 
 let dictionary = dictionaryEnglish; // Selected default dictionary
@@ -104,6 +108,7 @@ spanish.addEventListener("click", translateSpanish, { capture: false }); // choo
 english.addEventListener("click", translateEnglish, { capture: false }); // // choose lenguage english f()
 
 function rockSelection(e) {
+  sectionButtons.classList.add("clicked")
   if (gameCounter<5){
   gameCounter+=1;
   playerSelection = "ROCK";
@@ -117,9 +122,9 @@ function rockSelection(e) {
   paper.classList.remove("clicked", "click");  // remove if present
   scissor.classList.remove("clicked", "click");// remove if present
   h2Title.classList.remove("select"); //// just remove
-  rock.classList.add("clicked", "click");
+  rock.classList.add("clicked", "click", "fixWidth");
   setTimeout(function () {
-    rock.classList.remove("click", "clicked");
+    rock.classList.remove("click", "clicked", "fixWidth");
   }, 2000);
   h3SubTitle.textContent = gameWinner;
   h3SubTitle.classList.add("select");
@@ -142,9 +147,9 @@ function paperSelection(e) {
   scissor.classList.remove("clicked", "click");// remove if present
   rock.classList.remove("clicked", "click");   // remove if present
   h2Title.classList.remove("select"); // just remove
-  paper.classList.add("clicked", "click");
+  paper.classList.add("clicked", "click","fixWidth");
   setTimeout(function () {
-    paper.classList.remove("click", "clicked");
+    paper.classList.remove("click", "clicked","fixWidth");
   }, 2000);
   h3SubTitle.textContent = gameWinner;
   h3SubTitle.classList.add("select");
@@ -167,9 +172,9 @@ function scissorSelection(e) {
   paper.classList.remove("clicked", "click"); // remove if present
   rock.classList.remove("clicked", "click");  // remove if present
   h2Title.classList.remove("select"); // just remove
-  scissor.classList.add("clicked", "click");
+  scissor.classList.add("clicked", "click", "fixWidth");
   setTimeout(function () {
-    scissor.classList.remove("click", "clicked");
+    scissor.classList.remove("click", "clicked","fixWidth");
   }, 2000);
   h3SubTitle.textContent = gameWinner;
   h3SubTitle.classList.add("select");
