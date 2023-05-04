@@ -18,11 +18,11 @@ function getComputerChoice() {  //  Computer Choice f(x) & Start here
     number(); //  This makes a randomNumber from 1 to 9 and we give equal chances to every possibility
   }       
   if (randomNumber <= 3) {
-    computerSelection = "ROCK";
+      computerSelection = "ROCK";
   } else if (randomNumber <= 6) {
-    computerSelection = "PAPER";
+      computerSelection = "PAPER";
   } else {
-    computerSelection = "SCISSOR";
+      computerSelection = "SCISSOR";
   }
   return computerSelection;
 }
@@ -82,11 +82,11 @@ function matchesCounter(){  //  count five games and give the results
     wins = 0;
     attemptNumber=0;
     setTimeout(function () {
-    sectionButtons.classList.remove("clicked");
-    h2Title.textContent=dictionary[13];
-    h2Title.classList.add("select");
-    h3SubTitle.classList.remove("select");
-    h3SubTitle.textContent="";
+      sectionButtons.classList.remove("clicked");
+      h2Title.textContent=dictionary[13];
+      h2Title.classList.add("select");
+      h3SubTitle.classList.remove("select");
+      h3SubTitle.textContent="";
   }, 3000);
   }
 }

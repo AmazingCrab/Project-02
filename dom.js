@@ -1,7 +1,8 @@
+/*section containers*/ */
 const sectionLanguage = document.querySelector("#sectionLanguage");
 const sectionMain = document.querySelector("#sectionMain");
 const sectionButtons = document.querySelector("#sectionButtons");
-
+/*flags and titles*/
 const spanish = document.querySelector("#flagSpanish");
 const english = document.querySelector("#flagEnglish");
 const h3SelectLanguage = document.querySelector("#h3SelectLanguage");
@@ -9,7 +10,7 @@ const h2Title = document.querySelector("#h2Title");
 const h3SubTitle = document.querySelector("#h3SubTitle");
 const h1Title = document.querySelector("#h1Title");
 const h2GameCounter = document.querySelector("#h2GameCounter")
-
+/*buttons*/
 const rock = document.querySelector("#rock");
 const paper = document.querySelector("#paper");
 const scissor = document.querySelector("#scissor");
@@ -56,7 +57,7 @@ const dictionaryEnglish = [                 //  Index | Eng. dictionary words:
   " of 5 Matches."                          //  17    |  part of      " 
 ]; 
 
-let dictionary = dictionaryEnglish; // Selected default dictionary
+let dictionary = dictionaryEnglish;   // Selected default dictionary
 
 // English Language initialized
 h3SelectLanguage.textContent = dictionary[0];
