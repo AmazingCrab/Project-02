@@ -83,7 +83,6 @@ function translateSpanish(e) { // Should use add/remove on classList, because sw
     rock.textContent = dictionarySpanish[3];
     paper.textContent = dictionarySpanish[4];
     scissor.textContent = dictionarySpanish[5];
-    h2Title.textContent= dictionarySpanish[13]
     h1Title.textContent = dictionarySpanish[14];
     switch (attemptNumber){
       case 0:{
@@ -117,7 +116,8 @@ function translateSpanish(e) { // Should use add/remove on classList, because sw
   spanish.classList.add("clicked");           //flag selected
   return { dictionary };
 }
-  function translateEnglish(e) {
+
+function translateEnglish(e) {
   if (dictionary == dictionarySpanish) {
     h2Title.textContent =
       dictionaryEnglish[dictionarySpanish.indexOf(h2Title.innerHTML)];
@@ -130,7 +130,6 @@ function translateSpanish(e) { // Should use add/remove on classList, because sw
     rock.textContent = dictionaryEnglish[3];
     paper.textContent = dictionaryEnglish[4];
     scissor.textContent = dictionaryEnglish[5];
-    h2Title.textContent= dictionaryEnglish[13]
     h1Title.textContent = dictionaryEnglish[14];
     switch (attemptNumber){
       case 0:{
@@ -145,8 +144,7 @@ function translateSpanish(e) { // Should use add/remove on classList, because sw
         h2GameCounter.textContent = wins + dictionaryEnglish[15] + "s "+ attemptNumber + dictionaryEnglish[16] + "s " + dictionaryEnglish[17];
         break;
       }
-      }
-  
+      }  
   }
   dictionary = dictionaryEnglish;
   sectionLanguage.classList.add("clicked");
@@ -197,7 +195,6 @@ function rockSelection(e) {     //rock button (for click event)
       h2GameCounter.textContent = wins + dictionary[15] + "s "+ attemptNumber + dictionary[16] + "s " + dictionary[17];
     return { gameCounter, winnedMatches };
   }
-
   matchesCounter();
 }
 
@@ -248,12 +245,12 @@ function scissorSelection(e) {    //scissor button (for click event)
 }
 
 function main ()  {
-spanish.addEventListener("click", translateSpanish, { capture: false }); // choose language spanish f()
-english.addEventListener("click", translateEnglish, { capture: false }); // // choose language english f()
-// Listen buttons Events
-rock.addEventListener("click", rockSelection, { capture: false });
-paper.addEventListener("click", paperSelection, { capture: false });
-scissor.addEventListener("click", scissorSelection, { capture: false });
+  spanish.addEventListener("click", translateSpanish, { capture: false }); // choose language spanish f()
+  english.addEventListener("click", translateEnglish, { capture: false }); // // choose language english f()
+  // Listen buttons Events
+  rock.addEventListener("click", rockSelection, { capture: false });
+  paper.addEventListener("click", paperSelection, { capture: false });
+  scissor.addEventListener("click", scissorSelection, { capture: false });
 }
 
 main ();
