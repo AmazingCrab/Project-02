@@ -1,10 +1,12 @@
-let computerSelection = ""//Store the computer selection
-  , randomNumber = ""     //random number for computerSelection calcs
-  , playerSelection = ""  //Store player selection input
-  , gameWinner = ""       //Display the Output text at the end of each round
-  , gameCounter = 0       //This is the loop counter
-  , winnedMatches = "5"   //This count trough loses winned matches
-  , playAgain = "";       //PlayAgain option
+let computerSelection = ""  //Store the computer selection
+  , randomNumber = ""       //random number for computerSelection calcs
+  , playerSelection = ""    //Store player selection input
+  , gameWinner = ""         //Display the Output text at the end of each round
+  , gameCounter = 0         //This is the loop counter
+  , winnedMatches = "5"     //This count trough loses winned matches
+  , wins = 0                //This count trough wins matches
+  , attemptNumber = 0       //Attempts Counter
+  , playAgain = "";         //PlayAgain option
 
 function number() {
   randomNumber = Math.round(Math.random() * 10);
@@ -27,9 +29,11 @@ function getComputerChoice() {  //  Computer Choice f(x) & Start here
 
 function gameTied() { //  Tied Game check f(x) & Start here
   if (playerSelection === computerSelection) {
+    attemptNumber+=1;
     gameWinner = dictionary[6];
     winnedMatches -= 1;
   } else {
+    attemptNumber+=1;
     noTiedGame();
   }
   return { gameWinner, winnedMatches };
@@ -42,6 +46,8 @@ function noTiedGame() { //  No tied game f(x) & Start here
       if (computerSelection === "PAPER") {
         gameWinner = dictionary[8];
         winnedMatches -= 1;
+      }else{
+        wins+=1;
       }
       break;
     }
@@ -49,6 +55,8 @@ function noTiedGame() { //  No tied game f(x) & Start here
       if (computerSelection === "SCISSOR") {
         gameWinner = dictionary[9];
         winnedMatches -= 1;
+      }else{
+        wins+=1;
       }
       break;
     }
@@ -56,6 +64,8 @@ function noTiedGame() { //  No tied game f(x) & Start here
       if (computerSelection === "ROCK") {
         gameWinner = dictionary[10];
         winnedMatches -= 1;
+      }else{
+        wins+=1;
       }
       break;
     }
@@ -69,6 +79,8 @@ function matchesCounter(){  //  count five games and give the results
     h3SubTitle.textContent= dictionary[11] + winnedMatches + dictionary[12];
     gameCounter = 0;
     winnedMatches = "5";
+    wins = 0;
+    attemptNumber=0;
     setTimeout(function () {
     sectionButtons.classList.remove("clicked");
     h2Title.textContent=dictionary[13];
