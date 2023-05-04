@@ -7,6 +7,7 @@ const english = document.querySelector("#flagEnglish");
 const h3SelectLanguage = document.querySelector("#h3SelectLanguage");
 const h2Title = document.querySelector("#h2Title");
 const h3SubTitle = document.querySelector("#h3SubTitle");
+
 const rock = document.querySelector("#rock");
 const paper = document.querySelector("#paper");
 const scissor = document.querySelector("#scissor");
@@ -57,7 +58,7 @@ scissor.textContent = dictionary[5];
 sectionLanguage.classList.add("clicked");
 english.classList.add("clicked");
 
-function translateSpanish(e) {
+function translateSpanish(e) { // Should use add/remove on classList, because switching from language can make problems if toggle is used.
   if (dictionary == dictionaryEnglish) {
     h2Title.textContent =
       dictionarySpanish[dictionaryEnglish.indexOf(h2Title.innerHTML)];
@@ -87,7 +88,7 @@ function translateSpanish(e) {
   return { dictionary };
 }
 
-function translateEnglish(e) { // Should use add/remove on classList, because switching from language can make problems if toggle is used.
+function translateEnglish(e) {
   if (dictionary == dictionarySpanish) {
     h2Title.textContent =
       dictionaryEnglish[dictionarySpanish.indexOf(h2Title.innerHTML)];
@@ -116,9 +117,6 @@ function translateEnglish(e) { // Should use add/remove on classList, because sw
   english.classList.add("clicked");             //flag selected
   return { dictionary };
 }
-
-spanish.addEventListener("click", translateSpanish, { capture: false }); // choose language spanish f()
-english.addEventListener("click", translateEnglish, { capture: false }); // // choose language english f()
 
 function removeIfPresent(){
   sectionLanguage.classList.remove("clicked");    // remove if present
@@ -186,6 +184,11 @@ function scissorSelection(e) {
   matchesCounter();
 }
 
+
+spanish.addEventListener("click", translateSpanish, { capture: false }); // choose language spanish f()
+english.addEventListener("click", translateEnglish, { capture: false }); // // choose language english f()
+
+// Listen buttons Events
 rock.addEventListener("click", rockSelection, { capture: false });
 paper.addEventListener("click", paperSelection, { capture: false });
 scissor.addEventListener("click", scissorSelection, { capture: false });
