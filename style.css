@@ -1,5 +1,9 @@
 body{
     background-color: black;
+    width: 99vw;
+    border: 1px solid #ffc600;
+    box-shadow: 0 0 3px #ffc600;
+    border-radius: 1px;
 }
 *{
     font-family: sans-serif;
@@ -17,6 +21,12 @@ body{
     justify-content: space-evenly;
     background-color: black;
     margin: 3px 3px 0 3px;
+}
+footer{
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 h1, h2, #h3selectLanguage{
     text-transform: uppercase;
@@ -67,7 +77,7 @@ button{
 }
 .clicked{
     border-color: #ffc600;
-    box-shadow: 0 0 3px #ffc600;
+    box-shadow: 0 0 5px #ffc600;
 }
 .fixWidth{
     width: 92.5vw;
