@@ -30,7 +30,9 @@ const dictionarySpanish = [                 //  Index | Spa. dictionary words:
   " partidas en 5 intentos!",               //  12    |  index.js/final msn
   "Elije nuevamente para seguir jugando!",  //  13    |  h2Title
   "Juego piedra Papel o Tijera",            //  14    |  h1Title
-  " / 5 Victorias"                          //  15    |  part of h2GameCounter
+  " Victoria",                              //  15    |  part of h2GameCounter
+  " Intento",                               //  16    |  part of      " 
+  " de 5 Partidas."                         //  17    |  part of      "
 ]; 
 
 const dictionaryEnglish = [                 //  Index | Eng. dictionary words:
@@ -49,7 +51,9 @@ const dictionaryEnglish = [                 //  Index | Eng. dictionary words:
   " matches! in 5 Attempts!",               //  12    |  index.js/final msn
   "Choose again if you want to play Again!",//  13    |  h2Title
   "Rock Paper Scissor Game",                //  14    |  h1Title
-  " / 5 Wins"                               //  15    |  part of h2GameCounter
+  " Win",                                   //  15    |  part of h2GameCounter
+  " Attempt",                               //  16    |  part of      " 
+  " of 5 Matches."                          //  17    |  part of      " 
 ]; 
 
 let dictionary = dictionaryEnglish; // Selected default dictionary
@@ -79,8 +83,23 @@ function translateSpanish(e) { // Should use add/remove on classList, because sw
     rock.textContent = dictionarySpanish[3];
     paper.textContent = dictionarySpanish[4];
     scissor.textContent = dictionarySpanish[5];
+    h2Title.textContent= dictionarySpanish[13]
     h1Title.textContent = dictionarySpanish[14];
-  }
+    switch (attemptNumber){
+      case 0:{
+        h2GameCounter.textContent = "";
+        break;
+      }
+      case 1:{
+        h2GameCounter.textContent = wins + dictionarySpanish[15] + " " + attemptNumber + dictionarySpanish[16] + " " + dictionarySpanish[17];
+        break;
+      }
+      case 2,3,4,5:{
+        h2GameCounter.textContent = wins + dictionarySpanish[15] + "s "+ attemptNumber + dictionarySpanish[16] + "s " + dictionarySpanish[17];
+        break;
+      }
+      }
+    }
   dictionary = dictionarySpanish;
   sectionLanguage.classList.add("clicked");
   spanish.classList.add("click");
@@ -98,8 +117,7 @@ function translateSpanish(e) { // Should use add/remove on classList, because sw
   spanish.classList.add("clicked");           //flag selected
   return { dictionary };
 }
-
-function translateEnglish(e) {
+  function translateEnglish(e) {
   if (dictionary == dictionarySpanish) {
     h2Title.textContent =
       dictionaryEnglish[dictionarySpanish.indexOf(h2Title.innerHTML)];
@@ -112,7 +130,23 @@ function translateEnglish(e) {
     rock.textContent = dictionaryEnglish[3];
     paper.textContent = dictionaryEnglish[4];
     scissor.textContent = dictionaryEnglish[5];
+    h2Title.textContent= dictionaryEnglish[13]
     h1Title.textContent = dictionaryEnglish[14];
+    switch (attemptNumber){
+      case 0:{
+        h2GameCounter.textContent = "";
+        break;
+      }
+      case 1:{
+        h2GameCounter.textContent = wins + dictionaryEnglish[15] + " " + attemptNumber + dictionaryEnglish[16] + " " + dictionaryEnglish[17];
+        break;
+      }
+      case 2,3,4,5:{
+        h2GameCounter.textContent = wins + dictionaryEnglish[15] + "s "+ attemptNumber + dictionaryEnglish[16] + "s " + dictionaryEnglish[17];
+        break;
+      }
+      }
+  
   }
   dictionary = dictionaryEnglish;
   sectionLanguage.classList.add("clicked");
@@ -150,7 +184,6 @@ function rockSelection(e) {     //rock button (for click event)
     playerSelection = "ROCK";
     getComputerChoice();
     gameTied();
-    h2GameCounter.textContent = winnedMatches + " " + dictionary[15];
     removeIfPresent();
     rock.classList.add("clicked", "click", "fixWidth");
     setTimeout(function () {
@@ -158,7 +191,10 @@ function rockSelection(e) {     //rock button (for click event)
     }, 2000);
     h3SubTitle.textContent = gameWinner;
     h3SubTitle.classList.add("select");
-
+    if (attemptNumber == 1){
+      h2GameCounter.textContent = wins + dictionary[15] + " " + attemptNumber + dictionary[16] + " " + dictionary[17];
+    }else
+      h2GameCounter.textContent = wins + dictionary[15] + "s "+ attemptNumber + dictionary[16] + "s " + dictionary[17];
     return { gameCounter, winnedMatches };
   }
 
@@ -178,7 +214,11 @@ function paperSelection(e) {    //paper button (for click event)
       paper.classList.remove("click", "clicked", "fixWidth");
     }, 2000);
     h3SubTitle.textContent = gameWinner;
-    h3SubTitle.classList.add("select");
+    h3SubTitle.classList.add("select"); 
+    if (attemptNumber == 1){
+      h2GameCounter.textContent = wins + dictionary[15] + " " + attemptNumber + dictionary[16] + " " + dictionary[17];
+    }else
+      h2GameCounter.textContent = wins + dictionary[15] + "s "+ attemptNumber + dictionary[16] + "s " + dictionary[17];
     return { gameCounter, winnedMatches };
   }
   matchesCounter();
@@ -198,6 +238,10 @@ function scissorSelection(e) {    //scissor button (for click event)
     }, 2000);
     h3SubTitle.textContent = gameWinner;
     h3SubTitle.classList.add("select");
+    if (attemptNumber == 1){
+      h2GameCounter.textContent = wins + dictionary[15] + " " + attemptNumber + dictionary[16] + " " + dictionary[17];
+    }else
+      h2GameCounter.textContent = wins + dictionary[15] + "s "+ attemptNumber + dictionary[16] + "s " + dictionary[17];
     return { gameCounter, winnedMatches };
   }
   matchesCounter();
