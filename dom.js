@@ -149,6 +149,7 @@ function rockSelection(e) {
 }
 
 function paperSelection(e) {
+  sectionButtons.classList.add("clicked");
   if (gameCounter < 5) {
     gameCounter += 1;
     playerSelection = "PAPER";
@@ -167,6 +168,7 @@ function paperSelection(e) {
 }
 
 function scissorSelection(e) {
+  sectionButtons.classList.add("clicked");
   if (gameCounter < 5) {
     gameCounter += 1;
     playerSelection = "SCISSOR";
@@ -184,6 +186,7 @@ function scissorSelection(e) {
   matchesCounter();
 }
 
+function game ()  {
 
 spanish.addEventListener("click", translateSpanish, { capture: false }); // choose language spanish f()
 english.addEventListener("click", translateEnglish, { capture: false }); // // choose language english f()
@@ -192,3 +195,5 @@ english.addEventListener("click", translateEnglish, { capture: false }); // // c
 rock.addEventListener("click", rockSelection, { capture: false });
 paper.addEventListener("click", paperSelection, { capture: false });
 scissor.addEventListener("click", scissorSelection, { capture: false });
+}
+game ();
