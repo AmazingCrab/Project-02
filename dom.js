@@ -129,7 +129,7 @@ function removeIfPresent(){
   h2Title.classList.remove("select");             // just remove
 }
 
-function rockSelection(e) {
+function rockSelection(e) {     //rock button (for click event)
   sectionButtons.classList.add("clicked");
   if (gameCounter < 5) {
     gameCounter += 1;
@@ -148,7 +148,7 @@ function rockSelection(e) {
   matchesCounter();
 }
 
-function paperSelection(e) {
+function paperSelection(e) {    //paper button (for click event)
   sectionButtons.classList.add("clicked");
   if (gameCounter < 5) {
     gameCounter += 1;
@@ -167,7 +167,7 @@ function paperSelection(e) {
   matchesCounter();
 }
 
-function scissorSelection(e) {
+function scissorSelection(e) {    //scissor button (for click event)
   sectionButtons.classList.add("clicked");
   if (gameCounter < 5) {
     gameCounter += 1;
@@ -186,14 +186,13 @@ function scissorSelection(e) {
   matchesCounter();
 }
 
-function game ()  {
-
+function main ()  {
 spanish.addEventListener("click", translateSpanish, { capture: false }); // choose language spanish f()
 english.addEventListener("click", translateEnglish, { capture: false }); // // choose language english f()
-
 // Listen buttons Events
 rock.addEventListener("click", rockSelection, { capture: false });
 paper.addEventListener("click", paperSelection, { capture: false });
 scissor.addEventListener("click", scissorSelection, { capture: false });
 }
-game ();
+
+main ();
