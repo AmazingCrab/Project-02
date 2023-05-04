@@ -14,40 +14,42 @@ const rock = document.querySelector("#rock");
 const paper = document.querySelector("#paper");
 const scissor = document.querySelector("#scissor");
 
-const dictionarySpanish = [                 //  Spa. dictionary words:
-  "Elije tu idioma",                        //  h3SelectLanguage
-  "Vamos a jugar Piedra Papel o Tijera!",   //  h2Title
-  "Selecciona PIEDRA, PAPEL ó TIJERA!",     //  h3SubTitle
-  "Piedra",                                 //  button  1
-  "Papel",                                  //    "    2
-  "Tijera",                                 //    "    3
-  "¡Empate, segui intentando!",             //  index.js/gamWinner
-  "¡Increible! ¡Ganaste la partida!",       //    "
-  "¡Perdiste!, ¡PAPEL envuelve PIEDRA!",    //    "
-  "¡Perdiste!, ¡TIJERA corta PAPEL!",       //    "
-  "¡Perdiste!, PIEDRA rompe TIJERA",        //    "
-  "¡Ganaste ",                              //  index.js/final msn
-  " partidas en 5 intentos!",               //  index.js/final msn
-  "Elije nuevamente para seguir jugando!",  //  h2Title
-  "Juego piedra Papel o Tijera"             //  h2GameCounter
+const dictionarySpanish = [                 //  Index | Spa. dictionary words:
+  "Elije tu idioma",                        //  0     |  h3SelectLanguage
+  "Vamos a jugar Piedra Papel o Tijera!",   //  1     |  h2Title
+  "Selecciona PIEDRA, PAPEL ó TIJERA!",     //  2     |  h3SubTitle
+  "Piedra",                                 //  3     |  button  1
+  "Papel",                                  //  4     |    "    2
+  "Tijera",                                 //  5     |    "    3
+  "¡Empate, segui intentando!",             //  6     |  index.js/gamWinner
+  "¡Increible! ¡Ganaste la partida!",       //  7     |    "
+  "¡Perdiste!, ¡PAPEL envuelve PIEDRA!",    //  8     |    "
+  "¡Perdiste!, ¡TIJERA corta PAPEL!",       //  9     |    "
+  "¡Perdiste!, PIEDRA rompe TIJERA",        //  10    |    "
+  "¡Ganaste ",                              //  11    |  index.js/final msn
+  " partidas en 5 intentos!",               //  12    |  index.js/final msn
+  "Elije nuevamente para seguir jugando!",  //  13    |  h2Title
+  "Juego piedra Papel o Tijera",            //  14    |  h1Title
+  " / 5 Victorias"                          //  15    |  part of h2GameCounter
 ]; 
 
-const dictionaryEnglish = [                 //  Eng. dictionary words:
-  "Choose your language",                   //  h3SelectLanguage
-  "Lets Play Rock, Paper,Scissor!",         //  h2Title
-  "Select Between ROCK PAPER SCISSORS!",    //  h3SubTitle
-  "Rock",                                   //  button  1
-  "Paper",                                  //    "    2
-  "Scissor",                                //    "    3
-  "Tied game, try again!",                  //  index.js/gameWinner
-  "You win the match! You are amazing!",    //    "
-  "You lose!, PAPER beats ROCK",            //    "
-  "You lose!, SCISSOR beats PAPER",         //    "
-  "You lose!, ROCK beats SCISSOR",          //    "
-  "You win ",                               //  index.js/final msn
-  " matches! in 5 Attempts!",               //  index.js/final msn
-  "Choose again if you want to play Again!",//  h2Title
-  "Rock Paper Scissor Game"                 //  h2GameCounter
+const dictionaryEnglish = [                 //  Index | Eng. dictionary words:
+  "Choose your language",                   //  0     |  h3SelectLanguage
+  "Lets Play Rock, Paper,Scissor!",         //  1     |  h2Title
+  "Select Between ROCK PAPER SCISSORS!",    //  2     |  h3SubTitle
+  "Rock",                                   //  3     |  button  1
+  "Paper",                                  //  4     |     "    2
+  "Scissor",                                //  5     |     "    3
+  "Tied game, try again!",                  //  6     |  index.js/gameWinner
+  "You win the match! You are amazing!",    //  7     |     "
+  "You lose!, PAPER beats ROCK",            //  8     |     "
+  "You lose!, SCISSOR beats PAPER",         //  9     |     "
+  "You lose!, ROCK beats SCISSOR",          //  10    |     "
+  "You win ",                               //  11    |  index.js/final msn
+  " matches! in 5 Attempts!",               //  12    |  index.js/final msn
+  "Choose again if you want to play Again!",//  13    |  h2Title
+  "Rock Paper Scissor Game",                //  14    |  h1Title
+  " / 5 Wins"                               //  15    |  part of h2GameCounter
 ]; 
 
 let dictionary = dictionaryEnglish; // Selected default dictionary
@@ -148,6 +150,7 @@ function rockSelection(e) {     //rock button (for click event)
     playerSelection = "ROCK";
     getComputerChoice();
     gameTied();
+    h2GameCounter.textContent = winnedMatches + " " + dictionary[15];
     removeIfPresent();
     rock.classList.add("clicked", "click", "fixWidth");
     setTimeout(function () {
@@ -155,8 +158,10 @@ function rockSelection(e) {     //rock button (for click event)
     }, 2000);
     h3SubTitle.textContent = gameWinner;
     h3SubTitle.classList.add("select");
+
     return { gameCounter, winnedMatches };
   }
+
   matchesCounter();
 }
 
