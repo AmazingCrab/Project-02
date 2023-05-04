@@ -178,6 +178,7 @@ function removeIfPresent(){
 
 function rockSelection(e) {     //rock button (for click event)
   sectionButtons.classList.add("clicked");
+  h2GameCounter.classList.add("select");
   if (gameCounter < 5) {
     gameCounter += 1;
     playerSelection = "ROCK";
@@ -201,6 +202,7 @@ function rockSelection(e) {     //rock button (for click event)
 
 function paperSelection(e) {    //paper button (for click event)
   sectionButtons.classList.add("clicked");
+  h2GameCounter.classList.add("select");
   if (gameCounter < 5) {
     gameCounter += 1;
     playerSelection = "PAPER";
@@ -224,6 +226,7 @@ function paperSelection(e) {    //paper button (for click event)
 
 function scissorSelection(e) {    //scissor button (for click event)
   sectionButtons.classList.add("clicked");
+  h2GameCounter.classList.add("select");
   if (gameCounter < 5) {
     gameCounter += 1;
     playerSelection = "SCISSOR";
