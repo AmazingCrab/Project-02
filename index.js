@@ -5,7 +5,7 @@ let computerSelection = "" /*Store the computer selection*/
   , gameCounter = 0 /*This is the loop counter*/
   , winnedMatches = "5" /*This count trough loses winned matches*/
   , playAgain = ""; /*PlayAgain option*/
-
+let languageCounter=0;
 /*function varInit() {
   Variables init f(x) for Game Replays & Start Here
   computerSelection = "";
@@ -108,9 +108,17 @@ function noTiedGame() {
 
 function matchesCounter(){
   if (gameCounter =5){
+    sectionMain.classList.add("clicked");
     h3SubTitle.textContent= dictionary[11] + winnedMatches + dictionary[12];
     gameCounter = 0;
     winnedMatches = "5";
+    setTimeout(function () {
+    sectionButtons.classList.remove("clicked");
+    h2Title.textContent=dictionary[13];
+    h2Title.classList.add("select");
+    h3SubTitle.classList.remove("select");
+    h3SubTitle.textContent="";
+  }, 1000);
   }
 }
 /*

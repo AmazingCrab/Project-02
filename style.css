@@ -18,8 +18,8 @@ body{
     background-color: black;
     margin: 3px 3px 0 3px;
 }
-#sectionButtons{
-
+h1, h2, #h3selectLanguage{
+    text-transform: uppercase;
 }
 
 #containerLanguage{
