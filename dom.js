@@ -1,3 +1,6 @@
+let a ="";
+let b ="";
+
 const sectionLanguage = document.querySelector("#sectionLanguage");
 const sectionMain = document.querySelector("#sectionMain");
 const sectionButtons = document.querySelector("#sectionButtons");
@@ -58,8 +61,14 @@ sectionLanguage.classList.add("clicked");
 english.classList.add("clicked");
 
 function translateSpanish(e) {
-  if (languageCounter < 1){
-  languageCounter+=1;
+  if (dictionary == dictionaryEnglish){
+    h2Title.textContent = dictionarySpanish[dictionaryEnglish.indexOf(h2Title.innerHTML)];
+    h3SubTitle.textContent = dictionarySpanish[dictionaryEnglish.indexOf(h3SubTitle.innerHTML)];
+    h3SelectLanguage.textContent = dictionarySpanish[dictionaryEnglish.indexOf(h3SelectLanguage.innerHTML)];
+    rock.textContent = dictionarySpanish[3];
+    paper.textContent = dictionarySpanish[4];
+    scissor.textContent = dictionarySpanish[5];
+  } 
   sectionLanguage.classList.add("clicked");
   dictionary = dictionarySpanish;
   english.classList.remove("clicked", "click"); // remove if present
@@ -68,11 +77,6 @@ function translateSpanish(e) {
   spanish.classList.add("click");
   h3SelectLanguage.classList.add("select");
   h3SelectLanguage.textContent = dictionary[0]; // later we make this a f() with all the words
-  h2Title.textContent = dictionary[1];
-  h3SubTitle.textContent = dictionary[2];
-  rock.textContent = dictionary[3];
-  paper.textContent = dictionary[4];
-  scissor.textContent = dictionary[5];
   setTimeout(function () {
     spanish.classList.remove("click");
     h3SelectLanguage.classList.remove("select");
@@ -81,20 +85,18 @@ function translateSpanish(e) {
     h2Title.classList.add("select");          // next step
   }, 2000);
   spanish.classList.add("clicked");
-}
-else{
-  dictionary=dictionarySpanish;
-  languageCounter=0;
-  h3SelectLanguage.textContent = dictionary[0];
-  rock.textContent = dictionary[3];
-  paper.textContent = dictionary[4];
-  scissor.textContent = dictionary[5];
-}
+  return {dictionary}
 }
 
 function translateEnglish(e) {
-  if (languageCounter < 1){
-    languageCounter+=1;
+  if (dictionary == dictionarySpanish){
+    h2Title.textContent = dictionaryEnglish[dictionarySpanish.indexOf(h2Title.innerHTML)];
+    h3SubTitle.textContent = dictionaryEnglish[dictionarySpanish.indexOf(h3SubTitle.innerHTML)];
+    h3SelectLanguage.textContent = dictionaryEnglish[dictionarySpanish.indexOf(h3SelectLanguage.innerHTML)];
+    rock.textContent = dictionaryEnglish[3];
+    paper.textContent = dictionaryEnglish[4];
+    scissor.textContent = dictionaryEnglish[5];
+  } 
   sectionLanguage.classList.add("clicked");
   dictionary = dictionaryEnglish;
   spanish.classList.remove("clicked", "click"); // remove if present
@@ -102,12 +104,6 @@ function translateEnglish(e) {
   sectionMain.classList.remove("clicked");      // remove if present
   english.classList.add("click");
   h3SelectLanguage.classList.add("select");
-  h3SelectLanguage.textContent = dictionary[0];
-  h2Title.textContent = dictionary[1];
-  h3SubTitle.textContent = dictionary[2];
-  rock.textContent = dictionary[3];
-  paper.textContent = dictionary[4];
-  scissor.textContent = dictionary[5];
   setTimeout(function () {
     english.classList.remove("click");
     h3SelectLanguage.classList.remove("select");
@@ -116,15 +112,7 @@ function translateEnglish(e) {
     h2Title.classList.add("select");            // next step
   }, 2000);
   english.classList.add("clicked");
-  }
-  else{
-  dictionary=dictionaryEnglish;
-  languageCounter=0;
-  h3SelectLanguage.textContent = dictionary[0];
-  rock.textContent = dictionary[3];
-  paper.textContent = dictionary[4];
-  scissor.textContent = dictionary[5];
-}
+  return {dictionary}
 }
 
 spanish.addEventListener("click", translateSpanish, { capture: false }); // choose language spanish f()
