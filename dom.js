@@ -1,4 +1,4 @@
-/*section containers*/ */
+/*section containers*/ 
 const sectionLanguage = document.querySelector("#sectionLanguage");
 const sectionMain = document.querySelector("#sectionMain");
 const sectionButtons = document.querySelector("#sectionButtons");
