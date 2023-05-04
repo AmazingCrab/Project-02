@@ -7,12 +7,14 @@ const english = document.querySelector("#flagEnglish");
 const h3SelectLanguage = document.querySelector("#h3SelectLanguage");
 const h2Title = document.querySelector("#h2Title");
 const h3SubTitle = document.querySelector("#h3SubTitle");
+const h1Title = document.querySelector("#h1Title");
+const h2GameCounter = document.querySelector("#h2GameCounter")
 
 const rock = document.querySelector("#rock");
 const paper = document.querySelector("#paper");
 const scissor = document.querySelector("#scissor");
 
-const dictionarySpanish = [                 // Spa. dictionary words:
+const dictionarySpanish = [                 //  Spa. dictionary words:
   "Elije tu idioma",                        //  h3SelectLanguage
   "Vamos a jugar Piedra Papel o Tijera!",   //  h2Title
   "Selecciona PIEDRA, PAPEL ó TIJERA!",     //  h3SubTitle
@@ -27,23 +29,25 @@ const dictionarySpanish = [                 // Spa. dictionary words:
   "¡Ganaste ",                              //  index.js/final msn
   " partidas en 5 intentos!",               //  index.js/final msn
   "Elije nuevamente para seguir jugando!",  //  h2Title
+  "Juego piedra Papel o Tijera"             //  h2GameCounter
 ]; 
 
-const dictionaryEnglish = [                 // Eng. dictionary words:
+const dictionaryEnglish = [                 //  Eng. dictionary words:
   "Choose your language",                   //  h3SelectLanguage
   "Lets Play Rock, Paper,Scissor!",         //  h2Title
-  "Select Between ROCK PAPER SCISSORS!",    // h3SubTitle
-  "Rock",                                   // button  1
+  "Select Between ROCK PAPER SCISSORS!",    //  h3SubTitle
+  "Rock",                                   //  button  1
   "Paper",                                  //    "    2
   "Scissor",                                //    "    3
-  "Tied game, try again!",                  // index.js/gameWinner
+  "Tied game, try again!",                  //  index.js/gameWinner
   "You win the match! You are amazing!",    //    "
   "You lose!, PAPER beats ROCK",            //    "
   "You lose!, SCISSOR beats PAPER",         //    "
   "You lose!, ROCK beats SCISSOR",          //    "
-  "You win ",                               // index.js/final msn
-  " matches! in 5 Attempts!",               // index.js/final msn
-  "Choose again if you want to play Again!",// h2Title
+  "You win ",                               //  index.js/final msn
+  " matches! in 5 Attempts!",               //  index.js/final msn
+  "Choose again if you want to play Again!",//  h2Title
+  "Rock Paper Scissor Game"                 //  h2GameCounter
 ]; 
 
 let dictionary = dictionaryEnglish; // Selected default dictionary
@@ -55,6 +59,8 @@ h3SubTitle.textContent = dictionary[2];
 rock.textContent = dictionary[3];
 paper.textContent = dictionary[4];
 scissor.textContent = dictionary[5];
+h1Title.textContent = dictionary[14];
+h2GameCounter.textContent = "";
 sectionLanguage.classList.add("clicked");
 english.classList.add("clicked");
 
@@ -66,9 +72,12 @@ function translateSpanish(e) { // Should use add/remove on classList, because sw
       dictionarySpanish[dictionaryEnglish.indexOf(h3SubTitle.innerHTML)];
     h3SelectLanguage.textContent =
       dictionarySpanish[dictionaryEnglish.indexOf(h3SelectLanguage.innerHTML)];
+    h2GameCounter.textContent =
+      dictionarySpanish[dictionaryEnglish.indexOf(h2GameCounter.innerHTML)]
     rock.textContent = dictionarySpanish[3];
     paper.textContent = dictionarySpanish[4];
     scissor.textContent = dictionarySpanish[5];
+    h1Title.textContent = dictionarySpanish[14];
   }
   dictionary = dictionarySpanish;
   sectionLanguage.classList.add("clicked");
@@ -96,9 +105,12 @@ function translateEnglish(e) {
       dictionaryEnglish[dictionarySpanish.indexOf(h3SubTitle.innerHTML)];
     h3SelectLanguage.textContent =
       dictionaryEnglish[dictionarySpanish.indexOf(h3SelectLanguage.innerHTML)];
+    h2GameCounter.textContent = 
+      dictionarySpanish[dictionarySpanish.indexOf(h2GameCounter.innerHTML)];
     rock.textContent = dictionaryEnglish[3];
     paper.textContent = dictionaryEnglish[4];
     scissor.textContent = dictionaryEnglish[5];
+    h1Title.textContent = dictionaryEnglish[14];
   }
   dictionary = dictionaryEnglish;
   sectionLanguage.classList.add("clicked");
