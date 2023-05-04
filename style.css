@@ -1,10 +1,11 @@
 body{
-    background-color: black;
+    background-color: #000000;
     width: 99vw;
     border: 1px solid #ffc600;
     box-shadow: 0 0 3px #ffc600;
     border-radius: 1px;
 }
+
 *{
     font-family: sans-serif;
     margin: 0;
@@ -12,6 +13,7 @@ body{
     list-style: none;
     text-decoration:none;
 }
+
 #sectionLanguage, #sectionMain, #sectionButtons{
     height: 162px;
     padding: 0 0 5px 0;
@@ -19,9 +21,10 @@ body{
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
-    background-color: black;
-    margin: 3px 3px 0 3px;
+    background-color: #000000;
+    margin: 3px 20px 0 20px;
 }
+
 footer{
     height: 90px;
     display: flex;
@@ -29,6 +32,7 @@ footer{
     justify-content: center;
     align-items: center;
 }
+
 h1, h2, #h3selectLanguage{
     text-transform: uppercase;
 }
@@ -43,11 +47,12 @@ h1, h2, #h3selectLanguage{
 }
 
 h3,h2,h1, button{
-    color: white;
+    color: #ffffff;
     font-size: 12px;
     text-align: center;
     font-weight: 400;
 }
+
 ul{
     display: flex;
     flex-direction: column;
@@ -55,31 +60,37 @@ ul{
     justify-content: center;
     gap: 5px;
 }
+
 button{
     text-transform: uppercase;
     padding: 6px 0;
-    width: 98vw;
-    background-color:black;
+    margin: 0 20px;
+    width: 90vw;
+    background-color:#000000;
     font-size: 24px;
 }
 
 #flagSpanish, #flagEnglish{
     height:24px;
-    border: 1px solid black;
+    border: 1px solid #ffc600;
     border-radius: 1px;
 }
+
 .select{
     color:  #ffc600;
 }
+
 .click{
     transform: scale(1.06);
     border-color: #ffc600;
 
 }
+
 .clicked{
     border-color: #ffc600;
     box-shadow: 0 0 5px #ffc600;
 }
+
 .fixWidth{
-    width: 92.5vw;
+    width: 86.5vw;
 }
