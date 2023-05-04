@@ -85,6 +85,10 @@ function translateSpanish(e) {
 else{
   dictionary=dictionarySpanish;
   languageCounter=0;
+  h3SelectLanguage.textContent = dictionary[0];
+  rock.textContent = dictionary[3];
+  paper.textContent = dictionary[4];
+  scissor.textContent = dictionary[5];
 }
 }
 

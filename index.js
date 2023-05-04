@@ -118,7 +118,7 @@ function matchesCounter(){
     h2Title.classList.add("select");
     h3SubTitle.classList.remove("select");
     h3SubTitle.textContent="";
-  }, 1000);
+  }, 3000);
   }
 }
 /*
