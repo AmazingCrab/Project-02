@@ -70,7 +70,7 @@ function noTiedGame() { //  No tied game f(x) & Start here
       break;
     }
   }
-  return { gameWinner, winnedMatches };
+  return { gameWinner, winnedMatches, wins };
 }
 
 function matchesCounter(){  //  count five games and give the results
