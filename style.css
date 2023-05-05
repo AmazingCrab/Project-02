@@ -27,7 +27,6 @@ body{
     align-items: center;
     justify-content: space-evenly;
     background-color: #000000;
-    border: 1px solid #ffffff; /*test*/
 }
 #sectionMain{
     margin: 2% 0;
@@ -98,8 +97,11 @@ button{
 }
 
 .clicked{
-    border-color: #ffc600;
+    border: 1px solid  #ffc600; /*test*/
     box-shadow: 0 0 5px #ffc600;
+}
+.unClicked{
+    border: 1px solid #ffffff; /*test*/
 }
 
 .fixWidth{
