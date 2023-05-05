@@ -69,6 +69,8 @@ scissor.textContent = dictionary[5];
 h1Title.textContent = dictionary[14];
 h2GameCounter.textContent = "";
 sectionLanguage.classList.add("clicked");
+sectionMain.classList.add("unClicked");
+sectionButtons.classList.add("unClicked");
 english.classList.add("clicked");
 
 function translateSpanish(e) { // Should use add/remove on classList, because switching from language can make problems if toggle is used.
@@ -104,13 +106,17 @@ function translateSpanish(e) { // Should use add/remove on classList, because sw
   sectionLanguage.classList.add("clicked");
   spanish.classList.add("click");
   h3SelectLanguage.classList.add("select");
+  sectionMain.classList.add("unClicked");
   english.classList.remove("clicked", "click"); // remove if present
   h2Title.classList.remove("select");           //   "    if    " 
   sectionMain.classList.remove("clicked");      //   "    if    "
+  sectionLanguage.classList.remove("unClick");  //   "    if    "
   setTimeout(function () {
     spanish.classList.remove("click");
     h3SelectLanguage.classList.remove("select");
     sectionLanguage.classList.remove("clicked");
+    sectionMain.classList.remove("unClicked");
+    sectionLanguage.classList.add("unClicked");
     sectionMain.classList.add("clicked");     // next step/section
     h2Title.classList.add("select");          // next  "  /   "
   }, 2000);
@@ -151,13 +157,17 @@ function translateEnglish(e) {
   sectionLanguage.classList.add("clicked");
   english.classList.add("click");
   h3SelectLanguage.classList.add("select");
+  sectionMain.classList.add("unClicked");
   spanish.classList.remove("clicked", "click"); // remove if present
   h2Title.classList.remove("select");           //   "    if    "
   sectionMain.classList.remove("clicked");      //   "    if    "
+  sectionLanguage.classList.remove("unClick");  //   "    if
   setTimeout(function () {
     english.classList.remove("click");
     h3SelectLanguage.classList.remove("select");
     sectionLanguage.classList.remove("clicked");
+    sectionMain.classList.remove("unClicked");
+    sectionLanguage.classList.add("unClicked");
     sectionMain.classList.add("clicked");       // next step/section
     h2Title.classList.add("select");            // next  "  /   "
   }, 2000);
@@ -181,8 +191,10 @@ function rockSelection(e) {     //  rock button (for click event)
     h2Title.textContent = dictionary[1];
     fiveMatches = false;   
     }
-  sectionButtons.classList.add("clicked");
+  sectionButtons.classList.remove("unClicked");
+  sectionButtons.classList.add("Clicked");
   h2GameCounter.classList.add("select");
+  sectionMain.classList.add("unClicked");
   if (gameCounter < 5) {
     gameCounter += 1;
     playerSelection = "ROCK";
@@ -209,8 +221,10 @@ function paperSelection(e) {    //paper button (for click event)
     h2Title.textContent = dictionary[1];
     fiveMatches = false;   
     }
+  sectionButtons.classList.remove("unClicked");
   sectionButtons.classList.add("clicked");
   h2GameCounter.classList.add("select");
+  sectionMain.classList.add("unClicked");
   if (gameCounter < 5) {
     gameCounter += 1;
     playerSelection = "PAPER";
@@ -237,8 +251,10 @@ function scissorSelection(e) {    //scissor button (for click event)
     h2Title.textContent = dictionary[1];
     fiveMatches = false;   
     }
+  sectionButtons.classList.remove("unClicked");
   sectionButtons.classList.add("clicked");
   h2GameCounter.classList.add("select");
+  sectionMain.classList.add("unClicked");
   if (gameCounter < 5) {
     gameCounter += 1;
     playerSelection = "SCISSOR";
