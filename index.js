@@ -76,8 +76,8 @@ function noTiedGame() { //  No tied game f(x) & Start here
 function matchesCounter(){  //  count five games and give the results
   if (gameCounter =5){
     sectionMain.classList.add("clicked");
-    h3SubTitle.textContent= dictionary[11] + winnedMatches + dictionary[12];
-    gameCounter = 0;
+    h3SubTitle.textContent= dictionary[11] + winnedMatches + dictionary[12]; // Winned end message
+    gameCounter = 0;  // we reset values now
     winnedMatches = "5";
     wins = 0;
     attemptNumber=0;
