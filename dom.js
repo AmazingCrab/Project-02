@@ -190,9 +190,10 @@ function rockSelection(e) {     //  rock button (for click event)
   if (dictionary.indexOf(h2Title.innerHTML) === 13 && fiveMatches === true){ //This fix title for match 6x
     h2Title.textContent = dictionary[1];
     fiveMatches = false;   
-    }
+  }
   sectionButtons.classList.remove("unClicked");
-  sectionButtons.classList.add("Clicked");
+  sectionLanguage.classList.add("unClicked");
+  sectionButtons.classList.add("clicked");
   h2GameCounter.classList.add("select");
   sectionMain.classList.add("unClicked");
   if (gameCounter < 5) {
@@ -220,8 +221,9 @@ function paperSelection(e) {    //paper button (for click event)
   if (dictionary.indexOf(h2Title.innerHTML) === 13  && fiveMatches === true){ //This fix title for match 6x
     h2Title.textContent = dictionary[1];
     fiveMatches = false;   
-    }
+  }
   sectionButtons.classList.remove("unClicked");
+  sectionLanguage.classList.add("unClicked");
   sectionButtons.classList.add("clicked");
   h2GameCounter.classList.add("select");
   sectionMain.classList.add("unClicked");
@@ -250,8 +252,9 @@ function scissorSelection(e) {    //scissor button (for click event)
   if (dictionary.indexOf(h2Title.innerHTML) === 13  && fiveMatches === true){ //This fix title for match 6x
     h2Title.textContent = dictionary[1];
     fiveMatches = false;   
-    }
+  }
   sectionButtons.classList.remove("unClicked");
+  sectionLanguage.classList.add("unClicked");
   sectionButtons.classList.add("clicked");
   h2GameCounter.classList.add("select");
   sectionMain.classList.add("unClicked");
