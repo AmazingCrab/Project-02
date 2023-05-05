@@ -1,13 +1,14 @@
-let computerSelection = ""  //Store the computer selection
-  , randomNumber = ""       //random number for computerSelection calcs
-  , playerSelection = ""    //Store player selection input
-  , gameWinner = ""         //Display the Output text at the end of each round
-  , gameCounter = 0         //This is the loop counter
-  , winnedMatches = "5"     //This count trough loses winned matches
-  , wins = 0                //This count trough wins matches
-  , attemptNumber = 0       //Attempts Counter
-  , playAgain = "";         //PlayAgain option
-
+let computerSelection = ""  // Store the computer selection
+  , randomNumber = ""       // random number for computerSelection calcs
+  , playerSelection = ""    // Store player selection input
+  , gameWinner = ""         // Display the Output text at the end of each round
+  , gameCounter = 0         // This is the loop counter
+  , winnedMatches = "5"     // This count trough loses winned matches
+  , wins = 0                // This count trough wins matches
+  , attemptNumber = 0       // Attempts Counter
+  , playAgain = ""          // PlayAgain option
+  , fiveMatches = false      // 5Matches Ended     
+  ;
 function number() {
   randomNumber = Math.round(Math.random() * 10);
 }
@@ -74,19 +75,20 @@ function noTiedGame() { //  No tied game f(x) & Start here
 }
 
 function matchesCounter(){  //  count five games and give the results
-  if (gameCounter =5){
+  if (gameCounter === 5){
     sectionMain.classList.add("clicked");
     h3SubTitle.textContent= dictionary[11] + winnedMatches + dictionary[12]; // Winned end message
     gameCounter = 0;  // we reset values now
     winnedMatches = "5";
     wins = 0;
     attemptNumber=0;
+    fiveMatches=true;
     setTimeout(function () {
       sectionButtons.classList.remove("clicked");
       h2Title.textContent=dictionary[13];
       h2Title.classList.add("select");
       h3SubTitle.classList.remove("select");
       h3SubTitle.textContent="";
-  }, 3000);
+  }, 2000);
   }
 }

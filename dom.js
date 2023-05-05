@@ -177,8 +177,9 @@ function removeIfPresent(){
 }
 
 function rockSelection(e) {     //  rock button (for click event)
-  if (dictionary.indexOf(h2Title.innerHTML) === 13 && gameCounter === 5){ //This fix title for match 6x
-    h2Title.textContent = dictionary[1]   
+  if (dictionary.indexOf(h2Title.innerHTML) === 13 && fiveMatches === true){ //This fix title for match 6x
+    h2Title.textContent = dictionary[1];
+    fiveMatches = false;   
     }
   sectionButtons.classList.add("clicked");
   h2GameCounter.classList.add("select");
@@ -204,8 +205,9 @@ function rockSelection(e) {     //  rock button (for click event)
 }
 
 function paperSelection(e) {    //paper button (for click event)
-  if (dictionary.indexOf(h2Title.innerHTML) === 13 && gameCounter === 5){ //This fix title for match 6x
-    h2Title.textContent = dictionary[1]   
+  if (dictionary.indexOf(h2Title.innerHTML) === 13  && fiveMatches === true){ //This fix title for match 6x
+    h2Title.textContent = dictionary[1];
+    fiveMatches = false;   
     }
   sectionButtons.classList.add("clicked");
   h2GameCounter.classList.add("select");
@@ -231,8 +233,9 @@ function paperSelection(e) {    //paper button (for click event)
 }
 
 function scissorSelection(e) {    //scissor button (for click event)
-  if (dictionary.indexOf(h2Title.innerHTML) === 13 && gameCounter === 5){ //This fix title for match 6x
-    h2Title.textContent = dictionary[1]   
+  if (dictionary.indexOf(h2Title.innerHTML) === 13  && fiveMatches === true){ //This fix title for match 6x
+    h2Title.textContent = dictionary[1];
+    fiveMatches = false;   
     }
   sectionButtons.classList.add("clicked");
   h2GameCounter.classList.add("select");
