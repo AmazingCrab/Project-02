@@ -33,7 +33,7 @@ const dictionarySpanish = [                 //  Index | Spa. dictionary words:
   "Juego piedra Papel o Tijera",            //  14    |  h1Title
   " Victoria",                              //  15    |  part of h2GameCounter
   " Intento",                               //  16    |  part of      " 
-  " de 5 Partidas."                         //  17    |  part of      "
+  " de 5 Partidas"                         //  17    |  part of      "
 ]; 
 
 const dictionaryEnglish = [                 //  Index | Eng. dictionary words:
@@ -54,7 +54,7 @@ const dictionaryEnglish = [                 //  Index | Eng. dictionary words:
   "Rock Paper Scissor Game",                //  14    |  h1Title
   " Win",                                   //  15    |  part of h2GameCounter
   " Attempt",                               //  16    |  part of      " 
-  " of 5 Matches."                          //  17    |  part of      " 
+  " of 5 Matches"                          //  17    |  part of      " 
 ]; 
 
 let dictionary = dictionaryEnglish;   // Selected default dictionary
@@ -72,20 +72,20 @@ sectionLanguage.classList.add("clicked");
 english.classList.add("clicked");
 
 function translateSpanish(e) { // Should use add/remove on classList, because switching from language can make problems if toggle is used.
-  if (dictionary == dictionaryEnglish) {
-    h2Title.textContent =
-      dictionarySpanish[dictionaryEnglish.indexOf(h2Title.innerHTML)];
+  if (dictionary === dictionaryEnglish) {
+    h2Title.textContent = 
+      dictionarySpanish[dictionaryEnglish.indexOf(h2Title.innerHTML)]; // this four indexof() set dynamic content
     h3SubTitle.textContent =
       dictionarySpanish[dictionaryEnglish.indexOf(h3SubTitle.innerHTML)];
     h3SelectLanguage.textContent =
       dictionarySpanish[dictionaryEnglish.indexOf(h3SelectLanguage.innerHTML)];
     h2GameCounter.textContent =
       dictionarySpanish[dictionaryEnglish.indexOf(h2GameCounter.innerHTML)]
-    rock.textContent = dictionarySpanish[3];
-    paper.textContent = dictionarySpanish[4];
-    scissor.textContent = dictionarySpanish[5];
-    h1Title.textContent = dictionarySpanish[14];
-    switch (attemptNumber){
+    rock.textContent = dictionarySpanish[3];  // this four vars.tex.dic set static content  
+    paper.textContent = dictionarySpanish[4]; 
+    scissor.textContent = dictionarySpanish[5]; 
+    h1Title.textContent = dictionarySpanish[14];  
+    switch (attemptNumber){ // This fix singular/plural names in h2gameCounter
       case 0:{
         h2GameCounter.textContent = "";
         break;
@@ -105,14 +105,14 @@ function translateSpanish(e) { // Should use add/remove on classList, because sw
   spanish.classList.add("click");
   h3SelectLanguage.classList.add("select");
   english.classList.remove("clicked", "click"); // remove if present
-  h2Title.classList.remove("select");           // remove if present
-  sectionMain.classList.remove("clicked");      // remove if present
+  h2Title.classList.remove("select");           //   "    if    " 
+  sectionMain.classList.remove("clicked");      //   "    if    "
   setTimeout(function () {
     spanish.classList.remove("click");
     h3SelectLanguage.classList.remove("select");
     sectionLanguage.classList.remove("clicked");
     sectionMain.classList.add("clicked");     // next step/section
-    h2Title.classList.add("select");          // next step/section
+    h2Title.classList.add("select");          // next  "  /   "
   }, 2000);
   spanish.classList.add("clicked");           //flag selected
   return { dictionary };
@@ -121,18 +121,18 @@ function translateSpanish(e) { // Should use add/remove on classList, because sw
 function translateEnglish(e) {
   if (dictionary == dictionarySpanish) {
     h2Title.textContent =
-      dictionaryEnglish[dictionarySpanish.indexOf(h2Title.innerHTML)];
+      dictionaryEnglish[dictionarySpanish.indexOf(h2Title.innerHTML)];// this four indexof() set dynamic content
     h3SubTitle.textContent =
       dictionaryEnglish[dictionarySpanish.indexOf(h3SubTitle.innerHTML)];
     h3SelectLanguage.textContent =
       dictionaryEnglish[dictionarySpanish.indexOf(h3SelectLanguage.innerHTML)];
     h2GameCounter.textContent = 
       dictionarySpanish[dictionarySpanish.indexOf(h2GameCounter.innerHTML)];
-    rock.textContent = dictionaryEnglish[3];
-    paper.textContent = dictionaryEnglish[4];
-    scissor.textContent = dictionaryEnglish[5];
-    h1Title.textContent = dictionaryEnglish[14];
-    switch (attemptNumber){
+    rock.textContent = dictionaryEnglish[3];  // this four vars.tex.dic set static content  
+    paper.textContent = dictionaryEnglish[4]; 
+    scissor.textContent = dictionaryEnglish[5]; 
+    h1Title.textContent = dictionaryEnglish[14];  
+    switch (attemptNumber){ // This fix singular/plural names in h2gameCounter
       case 0:{
         h2GameCounter.textContent = "";
         break;
@@ -152,14 +152,14 @@ function translateEnglish(e) {
   english.classList.add("click");
   h3SelectLanguage.classList.add("select");
   spanish.classList.remove("clicked", "click"); // remove if present
-  h2Title.classList.remove("select");           // remove if present
-  sectionMain.classList.remove("clicked");      // remove if present
+  h2Title.classList.remove("select");           //   "    if    "
+  sectionMain.classList.remove("clicked");      //   "    if    "
   setTimeout(function () {
     english.classList.remove("click");
     h3SelectLanguage.classList.remove("select");
     sectionLanguage.classList.remove("clicked");
     sectionMain.classList.add("clicked");       // next step/section
-    h2Title.classList.add("select");            // next step/section
+    h2Title.classList.add("select");            // next  "  /   "
   }, 2000);
   english.classList.add("clicked");             //flag selected
   return { dictionary };
@@ -167,23 +167,26 @@ function translateEnglish(e) {
 
 function removeIfPresent(){
   sectionLanguage.classList.remove("clicked");    // remove if present
-  sectionMain.classList.remove("clicked");        // remove if present
-  spanish.classList.remove("click");              // remove if present
-  english.classList.remove("click");              // remove if present
-  h3SelectLanguage.classList.remove("select");    // remove if present
-  paper.classList.remove("clicked", "click");     // remove if present
-  scissor.classList.remove("clicked", "click");   // remove if present
+  sectionMain.classList.remove("clicked");        //   "    if    "
+  spanish.classList.remove("click");              //   "    if    "
+  english.classList.remove("click");              //   "    if    "
+  h3SelectLanguage.classList.remove("select");    //   "    if    "
+  paper.classList.remove("clicked", "click");     //   "    if    "
+  scissor.classList.remove("clicked", "click");   //   "    if    "
   h2Title.classList.remove("select");             // just remove
 }
 
-function rockSelection(e) {     //rock button (for click event)
+function rockSelection(e) {     //  rock button (for click event)
+  if (dictionary.indexOf(h2Title.innerHTML) === 13 && gameCounter === 5){ //This fix title for match 6x
+    h2Title.textContent = dictionary[1]   
+    }
   sectionButtons.classList.add("clicked");
   h2GameCounter.classList.add("select");
   if (gameCounter < 5) {
     gameCounter += 1;
     playerSelection = "ROCK";
-    getComputerChoice();
-    gameTied();
+    getComputerChoice();  // exist on index.js
+    gameTied();           //   "   on   "
     removeIfPresent();
     rock.classList.add("clicked", "click", "fixWidth");
     setTimeout(function () {
@@ -197,17 +200,20 @@ function rockSelection(e) {     //rock button (for click event)
       h2GameCounter.textContent = wins + dictionary[15] + "s "+ attemptNumber + dictionary[16] + "s " + dictionary[17];
     return { gameCounter, winnedMatches };
   }
-  matchesCounter();
+  matchesCounter();  // exist on index.js
 }
 
 function paperSelection(e) {    //paper button (for click event)
+  if (dictionary.indexOf(h2Title.innerHTML) === 13 && gameCounter === 5){ //This fix title for match 6x
+    h2Title.textContent = dictionary[1]   
+    }
   sectionButtons.classList.add("clicked");
   h2GameCounter.classList.add("select");
   if (gameCounter < 5) {
     gameCounter += 1;
     playerSelection = "PAPER";
-    getComputerChoice();
-    gameTied();
+    getComputerChoice();  // exist on index.js
+    gameTied();           //   "   on   "
     removeIfPresent();
     paper.classList.add("clicked", "click", "fixWidth");
     setTimeout(function () {
@@ -221,17 +227,20 @@ function paperSelection(e) {    //paper button (for click event)
       h2GameCounter.textContent = wins + dictionary[15] + "s "+ attemptNumber + dictionary[16] + "s " + dictionary[17];
     return { gameCounter, winnedMatches };
   }
-  matchesCounter();
+  matchesCounter();  // exist on index.js
 }
 
 function scissorSelection(e) {    //scissor button (for click event)
+  if (dictionary.indexOf(h2Title.innerHTML) === 13 && gameCounter === 5){ //This fix title for match 6x
+    h2Title.textContent = dictionary[1]   
+    }
   sectionButtons.classList.add("clicked");
   h2GameCounter.classList.add("select");
   if (gameCounter < 5) {
     gameCounter += 1;
     playerSelection = "SCISSOR";
-    getComputerChoice();
-    gameTied();
+    getComputerChoice();  // exist on index.js
+    gameTied();           //   "   on   "
     removeIfPresent();
     scissor.classList.add("clicked", "click", "fixWidth");
     setTimeout(function () {
@@ -245,7 +254,7 @@ function scissorSelection(e) {    //scissor button (for click event)
       h2GameCounter.textContent = wins + dictionary[15] + "s "+ attemptNumber + dictionary[16] + "s " + dictionary[17];
     return { gameCounter, winnedMatches };
   }
-  matchesCounter();
+  matchesCounter();  // exist on index.js
 }
 
 function main ()  {
