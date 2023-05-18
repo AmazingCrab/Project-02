@@ -5,3 +5,4 @@ This game has been designed for:
 , using DOM manipulation through javascript 
 , WITHOUT  CSS media querys
 .  
+Also like an EXTRA function a real time, Translate Button was Added.
